@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gateway Engineering | Industrial automation experts</title>
+<meta name="description" content="Control systems, networks and skilled people that keep Midsouth plants running. Gateway Engineering, Jonesboro, Arkansas.">
+<!-- Design preview: keep it out of search results until it replaces the live site. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',Arial,Helvetica,sans-serif;color:#1D1D1F;-webkit-font-smoothing:antialiased}
+a{color:#1A3CC8;text-decoration:none}a:hover{color:#1A3CC8;text-decoration:underline}
+.ge-dark a{color:#FFFFFF;text-decoration:underline;text-underline-offset:3px}
+.ge-dark a:hover{color:#FFFFFF}
+.ge-footer a{text-decoration:none}
+/* Footer wordmark as a drafted outline with faint rulers along its top and left, echoing the About section's drafting.
+   The rulers are placed from the type's own proportions: at line-height 1 with the box sitting 0.126em below the
+   baseline, the capitals run from 0.176em to 0.874em down the box (IBM Plex Sans caps are 0.698em tall). */
+.ge-footer .ge-wordmark{color:transparent !important;-webkit-text-stroke:1.5px rgba(255,255,255,.5);opacity:1 !important}
+.ge-footer .ge-wordmark::before,.ge-footer .ge-wordmark::after{content:"";position:absolute;pointer-events:none}
+.ge-footer .ge-wordmark::before{left:0;right:0;top:calc(.176em - 30px);height:10px;border-bottom:1px solid rgba(127,164,217,.4);background:repeating-linear-gradient(90deg,rgba(127,164,217,.4) 0 1px,transparent 1px 120px) left bottom / 100% 10px no-repeat,repeating-linear-gradient(90deg,rgba(127,164,217,.3) 0 1px,transparent 1px 24px) left bottom / 100% 5px no-repeat}
+.ge-footer .ge-wordmark::after{left:-30px;top:.176em;height:.698em;width:10px;border-right:1px solid rgba(127,164,217,.4);background:repeating-linear-gradient(180deg,rgba(127,164,217,.4) 0 1px,transparent 1px 120px) right top / 10px 100% no-repeat,repeating-linear-gradient(180deg,rgba(127,164,217,.3) 0 1px,transparent 1px 24px) right top / 5px 100% no-repeat}
+.ge-footer a:hover{text-decoration:underline}
+/* --vh is one hundredth of the screen height the scroll scenes are built for. JS sets it: the real window height when
+   scrolling drives the animations, and a fixed 9px (a 900px screen) on the design canvas, where the whole artboard is
+   one tall window and 100vh would mean thousands of pixels. */
+.ap-wrap{--vh:9px;position:relative;background:#FFFFFF;overflow-x:clip}
+.ap-pad{padding-left:clamp(20px,5vw,64px);padding-right:clamp(20px,5vw,64px)}
+.ap-inner{max-width:1200px;margin:0 auto}
+
+/* Header: transparent over the hero video with white links, then a solid white bar with dark links as soon as the
+   page scrolls (JS adds .is-solid). A soft dark fade behind the transparent state keeps the links readable over bright frames. */
+.ap-nav{position:fixed;top:0;left:0;right:0;z-index:50;height:68px;color:#FFFFFF;background:transparent;transition:background .35s ease,box-shadow .35s ease,color .35s ease,height .35s ease}
+.ap-nav::before{content:"";position:absolute;inset:0 0 -40px 0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0));pointer-events:none;transition:opacity .35s ease}
+.ap-nav.is-solid{height:60px;color:#1D1D1F;background:#FFFFFF;box-shadow:0 1px 0 #E5E5EA,0 8px 24px rgba(0,0,0,.05)}
+.ap-nav.is-solid::before{opacity:0}
+.ap-nav-row{position:relative;height:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.ap-nav-logo{display:block;justify-self:start}
+/* The wordmark is six times wider than it is tall, so it scales with the window: at full size it nearly fills the bar
+   (58px of 68, 52px of 60 once solid), and narrower windows shrink it before it can push into the links. */
+.ap-logo{display:block;height:clamp(40px,4vw,58px);width:auto;transition:height .35s ease}
+.ap-nav.is-solid .ap-logo{height:clamp(40px,3.6vw,52px)}
+.ap-nav-links{display:flex;justify-self:center;gap:clamp(22px,2.5vw,36px)}
+.ap-nav-links a{position:relative;white-space:nowrap;color:inherit;font-size:14px;font-weight:500;text-decoration:none;padding:6px 0}
+.ap-nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.ap-nav-links a:hover{color:inherit;text-decoration:none}
+.ap-nav-links a:hover::after{transform:scaleX(1)}
+.ap-pill{justify-self:end;display:inline-flex;align-items:center;min-height:40px;padding:0 20px;border-radius:980px;background:#1A3CC8;color:#FFFFFF !important;font-size:14px;font-weight:500;text-decoration:none !important;transition:filter .2s}
+.ap-pill:hover{filter:brightness(1.2)}
+.ap-burger{display:none;justify-self:end;width:44px;height:44px;align-items:center;justify-content:center;padding:0;border:0;background:transparent;color:inherit;cursor:pointer}
+.ap-nav a:focus-visible,.ap-burger:focus-visible,.ap-btn:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (max-width: 999px){.ap-nav-links,.ap-nav .ap-pill{display:none}.ap-burger{display:flex}.ap-nav-row{grid-template-columns:1fr auto}.ap-logo,.ap-nav.is-solid .ap-logo{height:40px}}
+
+/* A scene is a tall block whose stage sticks to the top of the window while you scroll through it; how far you are
+   through the scene drives its animation. In static mode (canvas, reduced motion, phones) scenes are only as tall as
+   their content and nothing sticks. */
+.ap-stage{position:sticky;top:0;height:calc(var(--vh) * 100);overflow:hidden}
+.ap-static .ap-scene{height:auto !important}
+.ap-static .ap-stage{position:relative;height:auto}
+
+/* Hero */
+.ap-hero .ap-scene{height:calc(var(--vh) * 220)}
+.ap-hero .ap-stage{background:#000000;min-height:560px}
+.ap-static .ap-hero .ap-stage{height:calc(var(--vh) * 100)}
+.ap-hero-media{position:absolute;inset:0;transform-origin:50% 40%;overflow:hidden;will-change:transform,border-radius}
+.ap-hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ap-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.25) 40%,rgba(0,0,0,.55) 100%)}
+.ap-hero-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:96px clamp(20px,5vw,64px) 64px;color:#FFFFFF;pointer-events:none}
+.ap-hero h1{position:relative;margin:0;font-size:clamp(46px,8.6vw,132px);line-height:1.02;font-weight:600;letter-spacing:-.035em;max-width:11ch;will-change:transform,opacity}
+.ap-hero-sub{position:absolute;left:0;right:0;bottom:12%;margin:0 auto;max-width:620px;padding:0 24px;font-size:clamp(19px,1.9vw,26px);line-height:1.35;font-weight:500;color:#F5F5F7;text-align:center;opacity:0;will-change:transform,opacity}
+.ap-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);color:rgba(255,255,255,.75);font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px}
+.ap-cue svg{animation:apBob 1.8s ease-in-out infinite}
+.ap-static .ap-hero-sub{opacity:1}
+.ap-static .ap-cue{display:none}
+@keyframes apBob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+/* The headline arrives on load: it rises out of a blur, then the scroll takes over. */
+/* Hero title on load: measured, outlined, then filled by an SVG copy (see playIntro). The real text stays transparent
+   meanwhile; if the script never runs, this delayed keyframe brings it back on its own after 5 seconds. */
+.ap-hero h1.is-drafting{color:transparent;animation:apUnhide 0s 5s forwards}
+@keyframes apUnhide{to{color:#FFFFFF}}
+.ap-hd-svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.ap-hd-text{fill:#FFFFFF;fill-opacity:0;stroke:#E4EBFF;stroke-width:1.4;stroke-linejoin:round}
+@keyframes apArrive{from{opacity:0;filter:blur(14px);transform:translateY(28px)}to{opacity:1;filter:none;transform:none}}
+.ap-arrive{animation:apArrive 1.4s cubic-bezier(.2,.7,.2,1) .2s both}
+
+/* Section openers */
+.ap-open{padding-top:160px;padding-bottom:72px;text-align:center}
+.ap-open h2{margin:0 auto 20px;font-size:clamp(40px,6.2vw,92px);line-height:1.03;font-weight:600;letter-spacing:-.03em}
+.ap-open p{margin:0 auto;max-width:700px;font-size:clamp(19px,1.7vw,24px);line-height:1.45;color:#6E6E73}
+
+/* Automation: a pinned stage where scrolling steps through the six services, the photo crossfading and settling as
+   each one becomes active. */
+.ap-auto .ap-scene{height:calc(var(--vh) * 100 + var(--vh) * 6 * 60)}
+.ap-auto .ap-stage{display:flex;align-items:center}
+.ap-auto-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:center;width:100%}
+.ap-steps{list-style:none;margin:0;padding:0 0 0 28px;position:relative;display:flex;flex-direction:column;gap:18px}
+.ap-steps::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:#E5E5EA;border-radius:2px}
+/* Scroll progress lives on the line, never in the text. A pale fill creeps down the line with every bit of scroll;
+   the dot stays beside the current service's title and only jumps, quickly, when the fill reaches the next title,
+   so the page feels snappy while still showing how far is left. */
+.ap-track-fill{position:absolute;z-index:1;left:0;top:0;width:2px;height:0;background:#B4BEEC;border-radius:2px;will-change:height}
+.ap-track-dot{position:absolute;z-index:2;left:-4px;top:0;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#1A3CC8;box-shadow:0 0 0 4px rgba(26,60,200,.15);transition:transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.ap-static .ap-track-fill,.ap-static .ap-track-dot{display:none}
+.ap-step h3{margin:0 0 6px;font-size:clamp(19px,1.7vw,25px);line-height:1.2;font-weight:600;letter-spacing:-.015em;color:#86868B;transition:color .3s}
+.ap-step p{margin:0;font-size:15px;line-height:1.5;color:#86868B;transition:color .3s}
+.ap-step.is-on h3{color:#1D1D1F}
+.ap-step.is-on p{color:#424245}
+.ap-static .ap-step h3{color:#1D1D1F}
+.ap-static .ap-step p{color:#6E6E73}
+.ap-frame{position:relative;width:100%;height:min(72vh, calc(var(--vh) * 72));border-radius:28px;overflow:hidden;background:#F5F5F7}
+.ap-static .ap-frame{height:560px}
+/* Photos crossfade in step with the scroll (set from JS), so the hand-off from one service to the next is visible as it happens. */
+.ap-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .45s ease;will-change:opacity,transform}
+.ap-static .ap-shot:first-child{opacity:1}
+@media (max-width: 860px){.ap-auto-grid{grid-template-columns:minmax(0,1fr)}.ap-static .ap-frame{height:320px}}
+
+/* Networking: dark, with a pinned row of cards that slides sideways as you scroll down. */
+.ap-net{background:#000000;color:#F5F5F7}
+.ap-net .ap-open p{color:#A1A1A6}
+.ap-net .ap-stage{display:flex;flex-direction:column;justify-content:center}
+/* Networking intro: a pinned title scene. "Networking" arrives with sparks of current racing across the screen
+   through the word, which lights up as they pass; then "and Video." arrives and a camera viewfinder snaps into focus
+   around "Video." with a scan line and a blinking REC. Each step fires once as its scroll point is crossed (and
+   replays if you scroll back past it), so the effects stay quick rather than being dragged along by the scroll. */
+.ap-intro{height:calc(var(--vh) * 220)}
+/* The title block sits low in its pinned screen and the card row sits high in the next one, so the hand-off between
+   the two scenes leaves a short gap instead of two half-screens of empty black. */
+.ap-intro-stage{box-sizing:border-box;align-items:center;text-align:center;justify-content:flex-end !important;padding-bottom:calc(var(--vh) * 15)}
+/* The cards are tall enough to fill the window, so they stay centered (below the 60px header) without leaving a band of
+   empty black above them. */
+.ap-net .ap-cards-stage{box-sizing:border-box;justify-content:center;padding-top:60px}
+.ap-static .ap-net .ap-cards-stage{padding-top:0}
+.ap-static .ap-intro-stage{padding-top:160px;padding-bottom:72px}
+.ap-intro-title{margin:0;font-size:clamp(48px,8vw,128px);line-height:1.04;font-weight:600;letter-spacing:-.035em}
+.ap-iw{display:block;position:relative;opacity:0;transform:translateY(24px);filter:blur(10px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1),filter .7s ease}
+.ap-intro.is-net .ap-iw-net,.ap-intro.is-vid .ap-iw-vid{opacity:1;transform:none;filter:none}
+.ap-and{color:#6E6E73}
+/* Room for the viewfinder's top corners and REC label, which would otherwise touch the g of "Networking". */
+.ap-iw-vid{margin-top:.16em}
+/* The sparks sit behind the word (the word is its own positioned layer above them) and run the full window width. */
+.ap-sparks{position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;pointer-events:none}
+.ap-sparks i{position:absolute;left:0;top:var(--y);width:24%;height:2px;margin-top:-1px;border-radius:2px;background:linear-gradient(90deg,rgba(91,124,255,0),rgba(91,124,255,.9) 80%,#FFFFFF);opacity:0;transform:translateX(-110%)}
+.ap-sparks i::after{content:"";position:absolute;right:-2px;top:-2px;width:6px;height:6px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 10px 3px rgba(91,124,255,.9)}
+.ap-intro.is-net .ap-sparks i{animation:apSpark 1.1s cubic-bezier(.55,.1,.35,1) var(--d) both}
+@keyframes apSpark{0%{opacity:0;transform:translateX(-110%)}12%,85%{opacity:1}100%{opacity:0;transform:translateX(420%)}}
+.ap-net-word{position:relative;display:inline-block;padding:.06em 0 .16em;margin:-.06em 0 -.16em}
+.ap-intro.is-net .ap-net-word{background:linear-gradient(100deg,#F5F5F7 44%,#9FB4FF 48%,#FFFFFF 50%,#9FB4FF 52%,#F5F5F7 56%) 100% 0/300% 100% no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;animation:apSweep 1.1s cubic-bezier(.55,.1,.35,1) .15s both}
+@keyframes apSweep{from{background-position:100% 0}to{background-position:0 0}}
+.ap-vid{position:relative;display:inline-block}
+.ap-vf{position:absolute;inset:-.08em -.2em -.04em;pointer-events:none;opacity:0;transform:scale(1.2);transition:opacity .35s ease .3s,transform .55s cubic-bezier(.2,.8,.2,1) .3s}
+.ap-intro.is-vid .ap-vf{opacity:1;transform:none}
+.ap-vf i{position:absolute;width:.2em;height:.2em;border:0 solid #F5F5F7}
+.ap-vf i:nth-child(1){top:0;left:0;border-top-width:3px;border-left-width:3px}
+.ap-vf i:nth-child(2){top:0;right:0;border-top-width:3px;border-right-width:3px}
+.ap-vf i:nth-child(3){bottom:0;left:0;border-bottom-width:3px;border-left-width:3px}
+.ap-vf i:nth-child(4){bottom:0;right:0;border-bottom-width:3px;border-right-width:3px}
+.ap-rec{position:absolute;left:.3em;top:.3em;display:flex;align-items:center;gap:7px;font:400 13px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#F5F5F7;font-style:normal}
+.ap-rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF3B30;animation:apBlink 1.2s steps(1) infinite}
+@keyframes apBlink{50%{opacity:0}}
+.ap-scan{position:absolute;left:3px;right:3px;top:0;height:30%;background:linear-gradient(180deg,rgba(91,124,255,0),rgba(91,124,255,.22) 85%,rgba(200,215,255,.6));opacity:0}
+.ap-intro.is-vid .ap-scan{animation:apScan 1s ease .5s both}
+@keyframes apScan{0%{opacity:0;transform:translateY(-20%)}15%,80%{opacity:1}100%{opacity:0;transform:translateY(235%)}}
+.ap-intro-sub{margin:36px auto 0;max-width:700px;font-size:clamp(19px,1.7vw,24px);line-height:1.45;color:#A1A1A6;opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.ap-intro.is-sub .ap-intro-sub{opacity:1;transform:none}
+.ap-static .ap-iw,.ap-static .ap-vf,.ap-static .ap-intro-sub{opacity:1;transform:none;filter:none;transition:none}
+.ap-static .ap-sparks,.ap-static .ap-scan{display:none}
+.ap-static .ap-net-word{animation:none;background:none;color:inherit}
+.ap-row{display:flex;gap:24px;padding:0 clamp(20px,5vw,64px);will-change:transform}
+.ap-static .ap-row{flex-wrap:wrap;justify-content:center;padding-bottom:140px}
+/* Tall photo panels: the photo fills the card and the name and description sit on a dark fade at the bottom. In the
+   static layout (canvas, phones) they wrap in rows at a fixed height instead of following the window. */
+.ap-card{position:relative;box-sizing:border-box;flex:0 0 auto;height:calc(var(--vh) * 78);width:clamp(280px,calc(var(--vh) * 56),520px);border-radius:28px;overflow:hidden;background:#161617;display:flex;flex-direction:column;justify-content:flex-end}
+.ap-static .ap-card{height:520px;width:clamp(290px,28vw,400px)}
+.ap-card img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;background:#2C2C2E}
+.ap-card-body{position:relative;padding:120px 32px 34px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.55) 40%,rgba(0,0,0,.82))}
+.ap-card h3{margin:0 0 10px;font-size:clamp(22px,1.9vw,28px);line-height:1.2;font-weight:600;letter-spacing:-.015em;color:#FFFFFF}
+.ap-card p{margin:0;font-size:16px;line-height:1.55;color:rgba(245,245,247,.82)}
+.ap-card-partner{justify-content:center;gap:20px;padding:36px 32px;background:linear-gradient(160deg,#1C1C1E,#0B0B0C)}
+.ap-card-partner img{position:static;width:min(240px,100%);height:auto;background:transparent;object-fit:contain}
+.ap-card-partner p{font-size:19px;line-height:1.45;color:#F5F5F7;font-weight:500}
+.ap-card-partner a{color:#7FA4FF;font-size:16px;font-weight:500}
+.ap-card-partner a:hover{color:#A8C1FF}
+
+
+/* Maintenance: a big statement whose words light up one by one as you scroll. */
+.ap-maint{position:relative;overflow-x:clip;background:#FFFFFF}
+.ap-words{margin:0 auto;max-width:15ch;font-size:clamp(40px,6.4vw,96px);line-height:1.06;font-weight:600;letter-spacing:-.03em;text-align:center}
+.ap-maint-open{padding-top:140px;padding-bottom:56px}
+.ap-maint-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center;padding-bottom:160px}
+.ap-maint-row img{display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:28px;background:#F5F5F7}
+.ap-maint-row h3{margin:0 0 14px;font-size:clamp(28px,3vw,40px);line-height:1.12;font-weight:600;letter-spacing:-.02em}
+.ap-maint-row p{margin:0;font-size:19px;line-height:1.55;color:#6E6E73}
+.ap-maint-row .ap-note{margin-top:16px;font-size:15px;color:#86868B}
+@media (max-width: 860px){.ap-maint-row{grid-template-columns:minmax(0,1fr)}}
+
+/* About: dark blueprint grid in the pale blue of the logo's grid, fine lines every 24px and stronger every 120px. */
+.ap-about{position:relative;overflow-x:clip;background-color:#0B0C0E;color:#FFFFFF;padding-top:0;padding-bottom:176px;background-image:linear-gradient(rgba(127,164,217,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(127,164,217,.13) 1px,transparent 1px),linear-gradient(rgba(127,164,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(127,164,217,.06) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+.ap-about h2{margin:0 0 28px;font-size:clamp(40px,5.6vw,80px);line-height:1.04;font-weight:600;letter-spacing:-.03em}
+.ap-about-lead{margin:0 0 56px;max-width:22ch;font-size:clamp(28px,3.4vw,48px);line-height:1.15;font-weight:500;letter-spacing:-.02em;color:#F5F5F7}
+.ap-about-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:32px 80px;margin-bottom:72px}
+.ap-about-cols p{margin:0;font-size:18px;line-height:1.65;color:#C4C8CF}
+.ap-label{display:block;margin-bottom:10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#A9AEB8}
+.ap-photo{overflow:hidden}
+
+/* About intro: a drafting-table camera move. The title starts zoomed in on a tilted blueprint sheet; as you scroll it is
+   dimensioned (CAD-style measurement lines), its letter outlines are drafted, then filled, while the sheet flattens
+   and settles into the normal page. Only transform and opacity change per frame, so it stays on the compositor.
+   The stage covers the section's own grid with an identical tilted one, which fades out once the sheet lies flat. */
+.ap-about-intro{height:calc(var(--vh) * 210)}
+.ap-about-stage{perspective:1000px;perspective-origin:50% 45%;background:rgba(11,12,14,var(--bg,1))}
+.ap-plane{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:calc(var(--vh) * 6);transform-style:flat}
+.ap-plane-grid{position:absolute;inset:-60% -60%;background-image:linear-gradient(rgba(127,164,217,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(127,164,217,.13) 1px,transparent 1px),linear-gradient(rgba(127,164,217,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(127,164,217,.06) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+.ap-plane .ap-pad{position:relative}
+.ap-ttl{position:relative;white-space:nowrap}
+/* The drafted copy is hidden and the real heading shown unless the script is mid-draft and says otherwise (inline
+   styles), so if the page is re-rendered or the script stops, the title is always left filled in. */
+.ap-ttl-svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;visibility:hidden}
+.ap-ttl-text{fill:#FFFFFF;fill-opacity:0;stroke:#9FB8E8;stroke-width:1.2;stroke-linejoin:round}
+.ap-dim{fill:none;stroke:#7FA4FF;stroke-width:1}
+.ap-dim-label{font:400 13px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;fill:#7FA4FF;stroke:none}
+.ap-static .ap-about-intro .ap-stage{background:transparent}
+.ap-static .ap-plane{position:relative;padding:160px 0 0}
+.ap-static .ap-plane-grid,.ap-static .ap-ttl-svg{display:none}
+.ap-static .ap-ttl{white-space:normal}
+
+/* The blocks after the title draft in as they scroll up: a dimension line measures the block's width, a dashed
+   outline is drafted around it, then the content fills in and the drafting marks fade. --m, --o and --f (measure,
+   outline, fill, each 0 to 1) are set from the block's position in the window; without script they rest at "done". */
+.ap-draft{position:relative;--m:1;--o:1;--f:1}
+.ap-draft::before{content:"";position:absolute;left:0;top:-20px;height:9px;width:calc(var(--m) * 100%);border-left:1px solid #7FA4FF;border-right:1px solid #7FA4FF;background:linear-gradient(#7FA4FF,#7FA4FF) center / 100% 1px no-repeat;opacity:calc(min(1, var(--m) * 20) * (1 - var(--f)));pointer-events:none}
+.ap-draft::after{content:"";position:absolute;inset:-8px;border:1px dashed rgba(127,164,217,.75);clip-path:inset(0 calc((1 - var(--o)) * 100%) calc((1 - var(--o)) * 100%) 0);opacity:calc(1 - var(--f));pointer-events:none}
+.ap-draft > *{opacity:var(--f)}
+.ap-static .ap-draft{--m:0;--o:0;--f:1}
+/* The building photo is a cut-out with a transparent sky; the light grey behind it is that sky, so it must stay light. */
+.ap-photo img{display:block;width:100%;aspect-ratio:21 / 9;object-fit:cover;object-position:center 40%;background:#DDDDDD;will-change:transform}
+
+/* Closing call to action over the slowed promo video; its heading and buttons draft in once the section is in view. */
+.ap-cta{position:relative;height:calc(var(--vh) * 100);min-height:560px;overflow:hidden;background:#000000;color:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center}
+.ap-cta video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ap-cta-shade{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(0,0,0,.35),rgba(0,0,0,.75))}
+.ap-cta-copy{position:relative;padding:0 24px}
+/* The heading's drafting marks hug its words rather than spanning the whole window. */
+.ap-cta-head{width:fit-content;max-width:100%;margin:0 auto 36px}
+.ap-cta h2{margin:0 auto;max-width:13ch;font-size:clamp(40px,6.4vw,96px);line-height:1.03;font-weight:600;letter-spacing:-.03em}
+.ap-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.ap-btn{display:inline-flex;align-items:center;min-height:52px;padding:0 28px;border-radius:980px;font-size:17px;font-weight:500;text-decoration:none !important;transition:transform .2s,background .2s}
+.ap-btn:hover{transform:scale(1.03)}
+.ap-btn-solid{background:#1A3CC8;color:#FFFFFF !important}
+.ap-btn-ghost{border:1.5px solid rgba(255,255,255,.85);color:#FFFFFF !important}
+.ap-btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* Reveal on scroll: rises out of a blur when it enters the window. Static mode shows everything at once. */
+.ap-reveal{opacity:0;transform:translateY(40px);filter:blur(8px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1),filter 1s;transition-delay:var(--d,0s)}
+.ap-reveal.is-in,.ap-static .ap-reveal{opacity:1;transform:none;filter:none}
+
+/* Phone menu */
+.ap-menu{position:fixed;inset:0;z-index:60;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:12px 20px 40px;overflow-y:auto;animation:apFade .25s ease}
+.ap-menu a{display:block;padding:12px 0;font-size:28px;font-weight:600;letter-spacing:-.02em;color:#1D1D1F}
+@keyframes apFade{from{opacity:0}to{opacity:1}}
+
+/* Side rail decorations (Maintenance pipes, About conduit); hidden below 1000px where the margin is too narrow. */
+@media (max-width: 999px){.ge-pipes,.ge-conduit{display:none}}
+@media (min-width: 1000px){
+.ap-rail-right :is(#maintenance,#about) .ap-pad{padding-right:max(clamp(20px, 5vw, 64px), var(--rail-clear, 0px)) !important}
+.ap-rail-left :is(#maintenance,#about) .ap-pad{padding-left:max(clamp(20px, 5vw, 64px), var(--rail-clear, 0px)) !important}
+}
+@media (prefers-reduced-motion: reduce){.ap-arrive,.ap-cue svg{animation:none}.ap-reveal{transition:none}}
+</style>
+</head>
+<body>
+<div data-ref="wrap" class="ap-wrap">
+<!-- Apple-style variation of the Services Homepage: full-screen scroll scenes instead of stacked sections. Scrolling scrubs each scene (the hero video shrinks into a card, the services step through a pinned stage, the networking title plays its word animation, the network cards slide sideways) and smaller pieces rise in as they arrive. -->
+<header data-ref="nav" class="ap-nav">
+<div class="ap-nav-row">
+<a href="#top" class="ap-nav-logo" aria-label="Gateway Engineering, back to top"><svg class="ap-logo" aria-hidden="true" viewBox="1.604 1 570.146 95">
+  <defs>
+    <linearGradient id="apgwSheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"></stop><stop offset=".5" stop-color="#fff" stop-opacity=".55"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+    </linearGradient>
+    <linearGradient id="apgwWipeEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+    </linearGradient>
+    <pattern id="apgwGrid" width="3.25" height="3.25" patternUnits="userSpaceOnUse">
+      <path d="M3.25 0H0V3.25" fill="none" stroke="#7fa4d9" stroke-width=".12"></path>
+    </pattern>
+    <clipPath id="apgwGridClip"><rect id="apgwGridClipRect" x="0" y="0" width="0" height="98"></rect></clipPath>
+    <clipPath id="apgwInner">
+      <rect x="6" y="5" width="91" height="87"></rect>
+      <rect x="102.32" y="17.75" width="468.43" height="57.25"></rect>
+    </clipPath>
+    <marker id="apgwArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1L10 5L0 9z" fill="#56657f"></path>
+    </marker>
+    <mask id="apgwPaintMask" maskUnits="userSpaceOnUse" x="0" y="0" width="105" height="98">
+      <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+        <path class="gw-brush" data-t0="2.40" data-t1="3.15" stroke-width="11" d="M35.27,21.30 C35.04,21.45 34.85,21.56 33.84,22.23 C32.83,22.89 30.63,24.13 29.22,25.30 C27.81,26.47 26.53,27.85 25.37,29.25 C24.20,30.65 23.12,32.14 22.21,33.70 C21.30,35.25 20.54,36.91 19.91,38.58 C19.28,40.26 18.76,41.99 18.42,43.73 C18.08,45.47 17.96,47.25 17.88,49.02 C17.79,50.78 17.76,52.55 17.91,54.31 C18.07,56.07 18.35,57.84 18.79,59.55 C19.23,61.27 19.80,62.99 20.55,64.60 C21.30,66.20 22.26,67.75 23.29,69.20 C24.33,70.64 25.51,72.01 26.77,73.27 C28.04,74.52 29.42,75.69 30.88,76.72 C32.34,77.75 33.91,78.64 35.52,79.45 C37.12,80.25 38.79,80.99 40.51,81.57 C42.23,82.14 44.03,82.60 45.84,82.88 C47.66,83.16 49.52,83.24 51.39,83.24 C53.26,83.25 55.11,83.05 57.05,82.91 C58.99,82.76 61.00,82.68 63.05,82.37 C65.10,82.06 67.05,81.72 69.37,81.07 C71.69,80.42 75.71,78.92 76.97,78.50" style="stroke-dasharray: 115.454, 115.454; stroke-dashoffset: 0; visibility: visible;"></path>
+        <path class="gw-brush" data-t0="2.60" data-t1="3.15" stroke-width="10" d="M45.50,21.30 C45.78,21.34 46.10,21.66 47.16,21.53 C48.21,21.41 50.23,20.70 51.81,20.54 C53.40,20.37 55.09,20.31 56.67,20.56 C58.25,20.81 59.78,21.45 61.29,22.04 C62.80,22.63 64.29,23.32 65.73,24.10 C67.17,24.88 68.76,25.61 69.94,26.73 C71.11,27.85 72.14,29.30 72.78,30.82 C73.43,32.34 73.63,35.01 73.80,35.85 L74.90,41.50" style="stroke-dasharray: 42.984, 42.984; stroke-dashoffset: 0; visibility: visible;"></path>
+        <path class="gw-brush" data-t0="2.78" data-t1="3.28" stroke-width="10" d="M49.5,58.2 L61.8,58.2 L61.8,79.5" style="stroke-dasharray: 34.6, 34.6; stroke-dashoffset: 0; visibility: visible;"></path>
+      </g>
+    </mask>
+    <mask id="apgwTextMask" maskUnits="userSpaceOnUse" x="100" y="0" width="480" height="98">
+      <rect id="apgwWipe" x="100" y="0" width="466" height="98" fill="#fff"></rect>
+      <rect id="apgwWipeSoft" x="566" y="0" width="14" height="98" fill="url(#apgwWipeEdge)"></rect>
+    </mask>
+  </defs>
+
+  <rect x="1.6" y="1" width="100.72" height="95" fill="#fff"></rect>
+  <rect x="102.32" y="17.75" width="468.43" height="57.25" fill="#fff"></rect>
+  <g id="apgwGridBg" fill="url(#apgwGrid)" opacity="0.35" clip-path="url(#apgwGridClip)">
+    <rect x="6" y="5" width="91" height="87"></rect>
+    <rect x="102.32" y="17.75" width="468.43" height="57.25"></rect>
+  </g>
+
+  <g id="apgwFrameFinal" opacity="1">
+    <path d="M1.604,1 L102.32,1 L101,2 L3,2 Z" fill="#040404"></path>
+    <path d="M1.604,1 L3,2 L3,95 L1.604,96 Z" fill="#050505"></path>
+    <path d="M102.32,1 L102.32,96 L101,95 L101,2 Z" fill="#040404"></path>
+    <path d="M1.604,96 L3,95 L101,95 L102.32,96 Z" fill="#040404"></path>
+    <path d="M3,2 L101,2 L100,3 L4,3 Z" fill="#535353"></path>
+    <path d="M3,2 L4,3 L4,94 L3,95 Z" fill="#6b6b6b"></path>
+    <path d="M101,2 L101,95 L100,94 L100,3 Z" fill="#636363"></path>
+    <path d="M3,95 L4,94 L100,94 L101,95 Z" fill="#383838"></path>
+    <path d="M4,3 L100,3 L99,4 L5,4 Z" fill="#868686"></path>
+    <path d="M4,3 L5,4 L5,93 L4,94 Z" fill="#939393"></path>
+    <path d="M100,3 L100,94 L99,93 L99,4 Z" fill="#878787"></path>
+    <path d="M4,94 L5,93 L99,93 L100,94 Z" fill="#868686"></path>
+    <path d="M5,4 L99,4 L98,5 L6,5 Z" fill="#cdcdcd"></path>
+    <path d="M5,4 L6,5 L6,92 L5,93 Z" fill="#d9d9d9"></path>
+    <path d="M99,4 L99,93 L98,92 L98,5 Z" fill="#999999"></path>
+    <path d="M5,93 L6,92 L98,92 L99,93 Z" fill="#b5b5b5"></path>
+    <path d="M98,5 L98,92 L97,92 L97,5 Z" fill="#e2e2e2"></path>
+  </g>
+
+  <g id="apgwFrameDraft" fill="none" stroke="#2b3a55" stroke-width=".3">
+    
+    
+  </g>
+
+  <path id="apgwBox" class="gw-draw" data-t0="1.90" data-t1="2.60" fill="none" stroke="#353535" stroke-width="1" d="M102.32 17.25H571.25V75.5H102.32" style="stroke-dasharray: 997.11, 997.11; stroke-dashoffset: 0; visibility: visible;"></path>
+
+  <g id="apgwPaint" fill="#0405e8" mask="url(#apgwPaintMask)">
+    <path d="M75.414,79.536 C74.857,79.193 73.913,78.955 73.271,79.355 C73.001,79.524 72.757,79.747 72.459,79.872 C72.171,79.993 71.803,79.969 71.496,80.017 C67.962,80.568 64.424,81.347 60.831,81.495 C57.431,81.635 49.735,81.809 46.636,81.198 C42.282,80.339 36.448,77.063 32.942,74.338 C31.259,73.029 29.683,71.560 28.283,69.951 C22.831,63.687 20.806,56.707 20.910,48.513 C20.983,42.751 22.353,37.056 25.278,32.056 C27.097,28.945 28.445,27.568 30.776,24.951 C31.182,24.496 31.623,24.123 32.064,23.706 C32.966,22.854 32.966,22.470 34.352,22.491 C34.142,22.298 34.061,22.119 33.756,22.052 C32.708,21.822 30.920,23.288 30.068,23.831 C26.503,26.100 23.466,29.061 20.949,32.443 C17.883,36.564 15.861,41.474 15.105,46.552 C14.919,47.803 14.926,49.051 14.809,50.302 C14.742,51.011 14.394,51.709 14.406,52.417 C14.417,53.071 14.751,53.700 14.799,54.363 C14.890,55.630 14.926,56.888 15.094,58.150 C15.567,61.705 16.886,65.197 18.645,68.305 C19.925,70.567 21.554,72.650 23.390,74.484 C27.709,78.795 33.236,82.095 39.188,83.540 C40.941,83.965 42.734,84.187 44.523,84.400 C46.308,84.613 48.108,84.838 49.909,84.826 C51.780,84.814 53.637,84.558 55.496,84.379 C57.290,84.207 59.084,84.049 60.863,83.747 C64.255,83.170 67.687,82.301 70.957,81.233 C72.486,80.734 73.830,79.871 75.414,79.536 Z"></path>
+    <path d="M75.136,27.422 C73.845,26.022 72.541,24.482 70.887,23.488 C68.820,22.245 64.972,21.288 62.575,20.577 C59.773,19.747 56.877,18.868 53.919,19.188 C52.568,19.334 50.686,19.712 49.451,20.273 C48.272,20.808 48.003,21.307 46.581,21.530 C47.031,21.683 46.128,21.481 46.843,21.664 C47.278,21.776 52.070,21.656 53.234,21.763 C57.410,22.146 61.299,23.802 64.578,26.404 C67.433,28.670 69.628,31.552 71.406,34.713 C72.090,35.930 72.714,37.178 73.308,38.439 C73.541,38.936 73.642,39.657 74.093,40.028 C74.460,40.330 74.066,39.937 74.467,40.172 C74.921,39.749 74.373,40.492 74.779,39.955 C75.131,39.488 75.017,37.687 75.110,37.016 C75.438,34.623 75.120,30.063 75.136,27.422 Z"></path>
+    <path d="M66.008,76.619 C66.467,75.051 66.345,72.918 66.356,71.257 C66.375,68.323 66.411,65.379 66.305,62.446 C66.247,60.851 66.096,58.420 65.201,57.089 C62.907,56.545 56.976,56.719 54.422,56.832 C53.717,56.863 51.776,56.676 51.266,57.055 C51.009,57.246 50.976,57.472 50.841,57.735 C50.987,57.898 51.035,58.052 51.237,58.175 C51.924,58.592 53.375,58.366 54.201,58.476 C55.869,58.700 57.870,59.407 59.060,60.642 C59.306,60.897 59.671,61.243 59.773,61.591 C59.873,61.937 59.906,64.982 59.917,65.575 C59.978,68.712 59.928,71.850 59.991,74.987 C60.009,75.918 59.954,76.858 60.081,77.775 C61.459,78.077 63.131,77.312 64.473,76.944 C65.011,76.797 65.285,76.874 66.008,76.619 Z"></path>
+  </g>
+  <g id="apgwOutline" fill="none" stroke="#1a2bff" stroke-width=".3" stroke-linejoin="round">
+    
+    
+    
+  </g>
+
+  <g id="apgwText" mask="url(#apgwTextMask)">
+    <g fill="#0405e8">
+      <path d="M149.571 65.793Q145.978 67.054 141.226 67.808Q136.474 68.561 132.679 68.561Q126.334 68.561 121.596 66.1Q116.859 63.639 114.295 58.933Q111.731 54.226 111.731 47.797Q111.731 37.43 117.308 31.831Q122.886 26.232 133.229 26.232Q135.75 26.232 137.822 26.447Q139.893 26.663 141.69 27.032Q143.486 27.401 148.296 28.847V38.322H145.688L144.993 32.969Q142.704 31.308 139.951 30.385Q137.199 29.462 134.272 29.462Q127.522 29.462 124.436 33.923Q121.35 38.383 121.35 47.735Q121.35 56.441 124.61 60.917Q127.869 65.393 134.041 65.393Q137.402 65.393 140.444 64.316V52.38L135.46 51.58V49.304H153.366V51.58L149.571 52.38Z"></path>
+      <path d="M162.502 58.225V59.179H157.435V58.225L158.677 57.872L164.601 41.503H168.202L174.101 57.872L175.368 58.225V59.179H167.954V58.225L169.879 57.872L168.289 53.335H161.894L160.366 57.872ZM165.147 44.144 162.403 51.897H167.817Z"></path>
+      <path d="M179.617 59.179V58.225L182.262 57.872V43.033H181.628Q178.785 43.033 177.63 43.294L177.294 46.55H176.164V41.647H192.346V46.55H191.203L190.868 43.294Q189.837 43.059 186.795 43.059H186.186V57.872L188.831 58.225V59.179Z"></path>
+      <path d="M194.512 58.225 196.648 57.872V42.941L194.512 42.601V41.647H208.694V46.105H207.564L207.167 43.268Q205.776 43.085 203.143 43.085H200.56V49.518H204.919L205.304 47.583H206.409V52.969H205.304L204.919 50.982H200.56V57.741H203.702Q206.906 57.741 207.9 57.532L208.607 54.29H209.737L209.501 59.179H194.512Z"></path>
+      <path d="M229.986 59.585H228.459L224.311 48.772L220.201 59.585H218.673L213.159 42.941L211.706 42.601V41.647H219.182V42.601L217.233 42.941L220.784 53.388L224.684 43.137H226.236L230.148 53.361L233.091 42.941L230.992 42.601V41.647H236.382V42.601L234.929 42.941Z"></path>
+      <path d="M241.639 58.225V59.179H236.573V58.225L237.814 57.872L243.738 41.503H247.339L253.238 57.872L254.505 58.225V59.179H247.091V58.225L249.016 57.872L247.426 53.335H241.031L239.503 57.872ZM244.284 44.144 241.54 51.897H246.954Z"></path>
+      <path d="M266.159 52.276V57.872L268.804 58.225V59.179H259.589V58.225L262.234 57.872V52.355L257.168 42.941L255.292 42.601V41.647H263.861V42.601L261.626 42.941L265.426 50.289L269.102 42.941L267.065 42.601V41.647H272.728V42.601L270.964 42.941Z"></path>
+      <path d="M282.079 65.7 287.062 64.87V29.739L282.079 28.939V26.694H315.167V37.184H312.53L311.603 30.508Q308.358 30.077 302.216 30.077H296.189V45.213H306.359L307.257 40.66H309.836V53.334H307.257L306.359 48.658H296.189V64.562H303.519Q310.995 64.562 313.313 64.07L314.964 56.441H317.601L317.05 67.946H282.079Z"></path>
+      <path d="M336.863 42.941 334.627 42.601V41.647H340.551V42.601L338.415 42.941V59.179H336.962L326.692 45.085V57.872L328.927 58.225V59.179H323.004V58.225L325.14 57.872V42.941L323.004 42.601V41.647H328.704L336.863 52.852Z"></path>
+      <path d="M358.853 58.264Q357.313 58.8 355.277 59.121Q353.24 59.441 351.613 59.441Q348.894 59.441 346.863 58.395Q344.833 57.349 343.734 55.349Q342.635 53.348 342.635 50.616Q342.635 46.21 345.025 43.83Q347.416 41.451 351.849 41.451Q352.93 41.451 353.818 41.542Q354.706 41.634 355.476 41.791Q356.246 41.948 358.307 42.562V46.589H357.189L356.891 44.314Q355.91 43.608 354.73 43.216Q353.551 42.824 352.296 42.824Q349.403 42.824 348.08 44.719Q346.758 46.615 346.758 50.59Q346.758 54.29 348.155 56.192Q349.552 58.094 352.197 58.094Q353.638 58.094 354.942 57.637V52.564L352.806 52.224V51.256H360.48V52.224L358.853 52.564Z"></path>
+      <path d="M368.52 57.872 370.656 58.212V59.179H362.473V58.212L364.609 57.872V42.954L362.473 42.601V41.647H370.656V42.601L368.52 42.954Z"></path>
+      <path d="M386.586 42.941 384.351 42.601V41.647H390.274V42.601L388.138 42.941V59.179H386.685L376.415 45.085V57.872L378.651 58.225V59.179H372.727V58.225L374.863 57.872V42.941L372.727 42.601V41.647H378.427L386.586 52.852Z"></path>
+      <path d="M391.859 58.225 393.995 57.872V42.941L391.859 42.601V41.647H406.041V46.105H404.911L404.513 43.268Q403.122 43.085 400.49 43.085H397.907V49.518H402.265L402.65 47.583H403.756V52.969H402.65L402.265 50.982H397.907V57.741H401.048Q404.252 57.741 405.246 57.532L405.954 54.29H407.084L406.848 59.179H391.859Z"></path>
+      <path d="M409.552 58.225 411.688 57.872V42.941L409.552 42.601V41.647H423.734V46.105H422.604L422.206 43.268Q420.816 43.085 418.183 43.085H415.6V49.518H419.959L420.344 47.583H421.449V52.969H420.344L419.959 50.982H415.6V57.741H418.742Q421.946 57.741 422.939 57.532L423.647 54.29H424.777L424.541 59.179H409.552Z"></path>
+      <path d="M433.318 51.753V57.872L435.454 58.225V59.179H427.419V58.225L429.394 57.872V42.941L427.258 42.601V41.647H435.218Q438.894 41.647 440.707 42.837Q442.52 44.026 442.52 46.55Q442.52 50.315 439.167 51.387L443.613 57.872L445.413 58.225V59.179H440.024L435.379 51.753ZM438.645 46.576Q438.645 44.615 437.875 43.85Q437.105 43.085 435.056 43.085H433.318V50.315H435.118Q437.031 50.315 437.838 49.478Q438.645 48.642 438.645 46.576Z"></path>
+      <path d="M452.447 57.872 454.583 58.212V59.179H446.399V58.212L448.535 57.872V42.954L446.399 42.601V41.647H454.583V42.601L452.447 42.954Z"></path>
+      <path d="M470.532 42.941 468.296 42.601V41.647H474.22V42.601L472.084 42.941V59.179H470.631L460.361 45.085V57.872L462.596 58.225V59.179H456.673V58.225L458.809 57.872V42.941L456.673 42.601V41.647H462.373L470.532 52.852Z"></path>
+      <path d="M492.336 58.264Q490.796 58.8 488.759 59.121Q486.723 59.441 485.096 59.441Q482.376 59.441 480.346 58.395Q478.315 57.349 477.216 55.349Q476.117 53.348 476.117 50.616Q476.117 46.21 478.508 43.83Q480.898 41.451 485.332 41.451Q486.412 41.451 487.3 41.542Q488.188 41.634 488.958 41.791Q489.728 41.948 491.789 42.562V46.589H490.672L490.374 44.314Q489.393 43.608 488.213 43.216Q487.033 42.824 485.779 42.824Q482.885 42.824 481.563 44.719Q480.24 46.615 480.24 50.59Q480.24 54.29 481.637 56.192Q483.034 58.094 485.679 58.094Q487.12 58.094 488.424 57.637V52.564L486.288 52.224V51.256H493.962V52.224L492.336 52.564Z"></path>
+      <path d="M500.513 57.794Q500.513 59.833 499.221 61.239Q497.93 62.644 495.459 63.324V62.121Q496.241 61.873 496.8 61.467Q497.359 61.062 497.663 60.572Q497.967 60.082 497.967 59.637Q497.967 59.349 497.781 59.14Q497.594 58.931 497.036 58.604Q496.092 58.081 496.092 56.983Q496.092 56.133 496.651 55.689Q497.21 55.244 498.066 55.244Q499.122 55.244 499.817 55.957Q500.513 56.669 500.513 57.794Z"></path>
+      <path d="M514.838 57.872 516.974 58.212V59.179H508.791V58.212L510.927 57.872V42.954L508.791 42.601V41.647H516.974V42.601L514.838 42.954Z"></path>
+      <path d="M532.696 42.941 530.461 42.601V41.647H536.384V42.601L534.248 42.941V59.179H532.795L522.525 45.085V57.872L524.761 58.225V59.179H518.837V58.225L520.973 57.872V42.941L518.837 42.601V41.647H524.537L532.696 52.852Z"></path>
+      <path d="M547.424 59.441Q543.239 59.441 540.892 57.101Q538.545 54.76 538.545 50.616Q538.545 46.118 540.786 43.785Q543.028 41.451 547.412 41.451Q550.305 41.451 553.41 42.327L553.484 46.537H552.367L552.019 44Q550.38 42.824 548.206 42.824Q545.325 42.824 543.997 44.713Q542.668 46.602 542.668 50.577Q542.668 54.25 544.059 56.172Q545.45 58.094 548.107 58.094Q549.51 58.094 550.56 57.702Q551.609 57.31 552.205 56.774L552.603 53.897H553.733L553.658 58.343Q552.54 58.8 550.752 59.121Q548.964 59.441 547.424 59.441Z"></path>
+      <path d="M559.254 59.559Q558.397 59.559 557.795 58.931Q557.193 58.303 557.193 57.388Q557.193 56.486 557.789 55.852Q558.385 55.218 559.254 55.218Q560.111 55.218 560.713 55.845Q561.315 56.473 561.315 57.388Q561.315 58.29 560.719 58.924Q560.123 59.559 559.254 59.559Z"></path>
+    </g>
+  </g>
+  <g id="apgwTextOutline" fill="none" stroke="#1a2bff" stroke-width=".3" stroke-linejoin="round">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+  <g fill="none" stroke="#0405e8" stroke-width="4.076" stroke-linecap="round">
+    <path class="gw-draw" data-t0="3.40" data-t1="3.70" d="M157.555 65.985H270.916" style="stroke-dasharray: 114.361, 114.361; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw" data-t0="3.50" data-t1="3.90" d="M325.42 65.985H559.563" style="stroke-dasharray: 235.143, 235.143; stroke-dashoffset: 0; visibility: visible;"></path>
+  </g>
+
+  <g id="apgwGuides" class="gw-guide" fill="none" stroke-width="1" stroke-linecap="butt">
+    <path class="gw-draw gw-pen" data-t0="0.35" data-t1="0.90" stroke="#b63c3a" d="M8.97 13.236H85.58" style="stroke-dasharray: 77.61, 77.61; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.43" data-t1="0.98" stroke="#b73d3a" d="M13.222 8.88V92.06" style="stroke-dasharray: 84.18, 84.18; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.51" data-t1="1.06" stroke="#b43934" d="M87.24 86.785H8.67" style="stroke-dasharray: 79.57, 79.57; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.59" data-t1="1.08" stroke="#9d403a" d="M81.863 8.89V42.59" style="stroke-dasharray: 34.7, 34.7; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.75" data-t1="1.20" stroke="#9f4136" d="M45.64 49.996H91.75" style="stroke-dasharray: 47.11, 47.11; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.83" data-t1="1.20" stroke="#b6333e" d="M86.25 38.808H66.9" style="stroke-dasharray: 20.35, 20.35; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.91" data-t1="1.30" stroke="#ae3a3a" d="M50.68 44.78V60.19" style="stroke-dasharray: 16.41, 16.41; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="0.97" data-t1="1.30" stroke="#902d26" d="M87.39 44.75V53.53" style="stroke-dasharray: 9.78, 9.78; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw" data-t0="1.30" data-t1="1.42" stroke="#902d26" d="M87.39 55.47V58.47" style="stroke-dasharray: 4, 4; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="1.05" data-t1="1.45" stroke="#ad403e" d="M82.718 91.08V60.96" style="stroke-dasharray: 31.12, 31.12; stroke-dashoffset: 0; visibility: visible;"></path>
+    <path class="gw-draw gw-pen" data-t0="1.13" data-t1="1.52" stroke="#ac3a32" d="M54.732 61.16V75.41" style="stroke-dasharray: 15.25, 15.25; stroke-dashoffset: 0; visibility: visible;"></path>
+  </g>
+
+  <g id="apgwTextGuides" class="gw-guide" fill="none" stroke="#b63c3a" stroke-width=".35" stroke-linecap="butt">
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+
+  <g id="apgwAnno" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="2.1" fill="#56657f">
+    <g fill="none" stroke="#56657f" stroke-width=".2">
+      
+      
+      
+      
+      
+      
+      
+      
+    </g>
+    <g stroke="none">
+      
+      
+      <g transform="rotate(-90 7.5 50)">
+        
+        
+      </g>
+      
+      <g transform="rotate(-90 566 47.32)">
+        
+        
+      </g>
+    </g>
+  </g>
+
+  <g id="apgwPens" fill="#d8392b">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </g>
+
+  <g clip-path="url(#apgwInner)">
+    
+  </g></svg></a>
+<nav aria-label="Main" class="ap-nav-links">
+<a href="#automation">Automation and Controls</a>
+<a href="#networking">Networking and Video</a>
+<a href="#maintenance">Maintenance Staffing</a>
+<a href="#about">About</a>
+</nav>
+<a href="#contact" class="ap-pill">Contact</a>
+<button type="button" class="ap-burger" aria-label="Open menu" data-action="open-menu">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8H20M4 16H20"></path></svg>
+</button>
+</div>
+</header>
+<div data-menu hidden>
+<div class="ap-menu" role="dialog" aria-modal="true" aria-label="Menu">
+<div style="display: flex; justify-content: flex-end">
+<button type="button" class="ap-burger" style="display: flex" aria-label="Close menu" data-action="close-menu">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18"></path></svg>
+</button>
+</div>
+<nav aria-label="Menu">
+<a href="#automation" data-action="close-menu">Automation and Controls</a>
+<a href="#networking" data-action="close-menu">Networking and Video</a>
+<a href="#maintenance" data-action="close-menu">Maintenance Staffing</a>
+<a href="#about" data-action="close-menu">About</a>
+<a href="#contact" data-action="close-menu">Contact</a>
+</nav>
+</div>
+</div>
+<main>
+<section id="top" class="ap-hero" aria-label="Gateway Engineering">
+<div data-ref="hero" class="ap-scene">
+<div class="ap-stage">
+<div data-ref="heroMedia" class="ap-hero-media">
+<!-- Placeholder promo loop cut from free Pexels stock footage until the real video is shot. -->
+<video class="ap-video" src="assets/video/promo-loop.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true"></video>
+<div data-ref="heroShade" class="ap-hero-shade"></div>
+</div>
+<div class="ap-hero-copy">
+<h1 data-ref="heroTitle" class="is-drafting"><span style="display: block">Industrial automation experts.</span></h1>
+</div>
+<p data-ref="heroSub" class="ap-hero-sub">Control systems, networks and skilled people that keep Midsouth plants running.</p>
+<div data-ref="cue" class="ap-cue" aria-hidden="true"><span>Scroll</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9L12 15L18 9"></path></svg></div>
+</div>
+</div>
+</section>
+
+<section id="automation" class="ap-auto" aria-labelledby="ap-automation">
+<div class="ap-open ap-pad">
+<h2 id="ap-automation" class="ap-reveal">Automation and Controls.</h2>
+<p class="ap-reveal" style="--d: .12s">We design, program and support the control systems that run your plant, built on Rockwell Automation.</p>
+</div>
+<div data-ref="auto" class="ap-scene">
+<div class="ap-stage ap-pad">
+<div class="ap-inner ap-auto-grid">
+<div style="position: relative">
+<span data-ref="autoFill" class="ap-track-fill" aria-hidden="true"></span>
+<span data-ref="autoDot" class="ap-track-dot" aria-hidden="true"></span>
+<ol class="ap-steps">
+<li class="ap-step" data-step="0" id="svc-control-system-integration">
+<h3>Control System Integration</h3>
+<p>Complete control systems for new lines and plant expansions, designed and commissioned on Rockwell Automation hardware.</p>
+</li>
+<li class="ap-step" data-step="1" id="svc-plc-programming">
+<h3>PLC Programming</h3>
+<p>Logic written, tested and documented for Allen-Bradley controllers, plus troubleshooting of the code you already run.</p>
+</li>
+<li class="ap-step" data-step="2" id="svc-hmi-and-scada">
+<h3>HMI and SCADA</h3>
+<p>Operator touchscreens and plant-wide monitoring that show your people what every machine is doing.</p>
+</li>
+<li class="ap-step" data-step="3" id="svc-drives-and-motion-control">
+<h3>Drives and Motion Control</h3>
+<p>Variable frequency drives and motion systems set up for conveyors, pumps and production machinery.</p>
+</li>
+<li class="ap-step" data-step="4" id="svc-control-panel-design-and-fabrication">
+<h3>Control Panel Design and Fabrication</h3>
+<p>Control panels designed, built and wired, ready to install on site.</p>
+</li>
+<li class="ap-step" data-step="5" id="svc-control-system-migrations">
+<h3>Control System Migrations</h3>
+<p>Obsolete controllers and software replaced with current platforms, planned around your production schedule.</p>
+</li>
+</ol>
+</div>
+<div class="ap-frame">
+<img class="ap-shot" data-shot="0" src="assets/img/auto-integration.jpg" alt="Automated production line in a factory">
+<img class="ap-shot" data-shot="1" src="assets/img/auto-plc.jpg" alt="Engineer reviewing a schematic on screen">
+<img class="ap-shot" data-shot="2" src="assets/img/auto-hmi.jpg" alt="Automation stations with HMI touchscreens">
+<img class="ap-shot" data-shot="3" src="assets/img/auto-drives.jpg" alt="Industrial electric motor">
+<img class="ap-shot" data-shot="4" src="assets/img/auto-panels.jpg" alt="Technician wiring an industrial control panel">
+<img class="ap-shot" data-shot="5" src="assets/img/auto-migrations.jpg" alt="Legacy analog control panel">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="networking" class="ap-net" aria-labelledby="ap-networking">
+<div data-ref="netIntro" class="ap-scene ap-intro">
+<div class="ap-stage ap-pad ap-intro-stage">
+<h2 id="ap-networking" class="ap-intro-title">
+<span class="ap-iw ap-iw-net"><span class="ap-sparks" aria-hidden="true"><i style="--y: 30%; --d: .06s"></i><i style="--y: 54%; --d: 0s"></i><i style="--y: 76%; --d: .16s"></i></span><span class="ap-net-word">Networking</span></span>
+<span class="ap-iw ap-iw-vid"><span class="ap-and">and</span> <span class="ap-vid">Video.<span class="ap-vf" aria-hidden="true"><i></i><i></i><i></i><i></i><em class="ap-rec">REC</em><s class="ap-scan"></s></span></span></span>
+</h2>
+<p class="ap-intro-sub">We connect your plant floor, keep it reachable from anywhere, and put eyes on the places you can't always be.</p>
+</div>
+</div>
+<div data-ref="net" class="ap-scene">
+<div data-ref="netStage" class="ap-stage ap-cards-stage">
+<div data-ref="netRow" class="ap-row">
+<article class="ap-card" id="svc-industrial-network-design-and-installation">
+<img src="assets/img/net-design.jpg" alt="Technician patching cables into a network switch">
+<div class="ap-card-body">
+<h3>Industrial Network Design and Installation</h3>
+<p>Plant-floor networks that tie your controllers, drives and computers together reliably.</p>
+</div>
+</article>
+<article class="ap-card" id="svc-fiber-optic-installation">
+<img src="assets/img/net-fiber.jpg" alt="Fiber optic patch panel">
+<div class="ap-card-body">
+<h3>Fiber Optic Installation</h3>
+<p>Fiber run, terminated and tested between buildings and across large sites.</p>
+</div>
+</article>
+<article class="ap-card" id="svc-secure-remote-access">
+<img src="assets/img/net-remote-access.jpg" alt="Network cabling behind a remote access terminal">
+<div class="ap-card-body">
+<h3>Secure Remote Access</h3>
+<p>VPN connections that let your engineers, and ours, reach plant systems safely from offsite.</p>
+</div>
+</article>
+<article class="ap-card" id="svc-remote-support-and-troubleshooting">
+<img src="assets/img/net-remote-support.jpg" alt="Engineer monitoring systems across several screens">
+<div class="ap-card-body">
+<h3>Remote Support and Troubleshooting</h3>
+<p>Problems diagnosed and fixed from our Jonesboro office, often without a trip to your site.</p>
+</div>
+</article>
+<article class="ap-card" id="svc-video-surveillance">
+<img src="assets/img/net-surveillance.jpg" alt="Security cameras mounted on a wall">
+<div class="ap-card-body">
+<h3>Video Surveillance</h3>
+<p>Industrial IP cameras and video software for safety inspections, security and keeping an eye on production.</p>
+</div>
+</article>
+<article class="ap-card" id="svc-remote-site-monitoring">
+<img src="assets/img/net-site-monitoring.jpg" alt="Camera pole monitoring an outdoor site">
+<div class="ap-card-body">
+<h3>Remote Site Monitoring</h3>
+<p>Pan-tilt-zoom cameras that let you check on distant facilities and project progress without the drive.</p>
+</div>
+</article>
+<article class="ap-card ap-card-partner">
+<p>And more technical connectivity services from our partner company, Gateway Sight &amp; Sound.</p>
+<img src="assets/img/logo-gateway-sight-sound.png" alt="Gateway Sight &amp; Sound">
+<a href="https://www.gatewaysightsound.com/" target="_blank" rel="noopener">Visit Gateway Sight &amp; Sound ›</a>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section id="maintenance" data-ref="maint" class="ap-maint" aria-labelledby="ap-maintenance">
+<!-- Decorative plumbing down the side margin, a nod to maintenance work. drawPipes() draws it to the section's live size. -->
+<svg data-ref="pipes" class="ge-pipes" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.55"></svg>
+<div style="position: relative; z-index: 1">
+<h2 id="ap-maintenance" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: 0; padding: 0">Maintenance Staffing</h2>
+<div class="ap-pad ap-maint-open">
+<p class="ap-words ap-reveal">Skilled maintenance technicians for your plant. Without the hiring.</p>
+</div>
+<div class="ap-pad">
+<div class="ap-inner ap-maint-row">
+<img class="ap-reveal" src="assets/img/maintenance-technician.jpg" alt="Technician taking readings on equipment">
+<div class="ap-reveal" style="--d: .12s">
+<h3>Contract Maintenance Technicians</h3>
+<p>Tell us how many technicians you need and we provide them, fully trained, at a competitive monthly rate, so you spend your time producing instead of hiring.</p>
+<p class="ap-note">Our technicians work to OSHA and NFPA safety standards.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" data-ref="about" class="ge-dark ap-about" aria-labelledby="ap-about">
+<!-- Decorative electrical conduit down the side margin, in the same strip as the pipes above. drawConduit() draws it. -->
+<svg data-ref="conduit" class="ge-conduit" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.7"></svg>
+<div data-ref="aboutIntro" class="ap-scene ap-about-intro" style="position: relative; z-index: 1">
+<div data-ref="aboutStage" class="ap-stage ap-about-stage">
+<div data-ref="aboutPlane" class="ap-plane">
+<div data-ref="aboutGrid" class="ap-plane-grid" aria-hidden="true"></div>
+<div class="ap-pad">
+<div class="ap-inner">
+<h2 id="ap-about" data-ref="aboutTitle" class="ap-ttl">Gateway Engineering<svg class="ap-ttl-svg" aria-hidden="true"><g class="ap-dims"><path class="ap-dim" data-dim="w" pathLength="1"></path><path class="ap-dim" data-dim="h" pathLength="1"></path><text class="ap-dim-label" data-label="w" text-anchor="middle"></text><text class="ap-dim-label" data-label="h" text-anchor="middle"></text></g><text class="ap-ttl-text" x="0" y="0">Gateway Engineering</text></svg></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ap-pad" style="position: relative; z-index: 1">
+<div class="ap-inner">
+<p class="ap-about-lead ap-draft">A Jonesboro, Arkansas engineering company providing industrial automation services to the Midsouth for over 17 years.</p>
+<div class="ap-about-cols">
+<p class="ap-draft">Gateway Engineering is the largest Rockwell Automation integrator in seven states. From our headquarters in Jonesboro, we support our customers' facilities on site and remotely, from the control systems that run their lines to the networks, cameras and technicians that keep them running.</p>
+<div class="ap-draft">
+<span class="ap-label">Partners and credentials</span>
+<span style="font-size: 16px; line-height: 1.7; color: #FFFFFF">Rockwell Automation integrator · Authorized Dell reseller · Axis Communications Silver Partner · Milestone integrator · OSHA compliant</span>
+</div>
+</div>
+<!-- The photo is sized in whole 24px grid cells and the grid starts at its corner, so its edges sit on grid lines; alignPhoto() does both. The image inside zooms out slightly as it scrolls through, without moving those edges. -->
+<div class="ap-draft">
+<div data-ref="photo" class="ap-photo">
+<img data-ref="photoImg" src="assets/img/gateway-building.png" alt="The Gateway building in Jonesboro">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section data-ref="cta" class="ap-cta" aria-labelledby="ap-cta">
+<video class="ap-video ap-cta-video" src="assets/video/promo-loop.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-hidden="true"></video>
+<div class="ap-cta-shade"></div>
+<div data-ref="ctaCopy" class="ap-cta-copy">
+<div class="ap-draft ap-cta-head"><h2 id="ap-cta">Got a line that needs automating?</h2></div>
+<div class="ap-btns">
+<span class="ap-draft"><a href="#contact" class="ap-btn ap-btn-solid">Start a project</a></span>
+<span class="ap-draft"><a href="tel:+18709356411" class="ap-btn ap-btn-ghost">Call 870-935-6411</a></span>
+</div>
+</div>
+</section>
+</main>
+<!-- Site footer: link columns over a dark band, with an oversized GATEWAY wordmark bleeding off the bottom-right edge. The wordmark is decorative (aria-hidden) and the footer clips it, so it never adds scroll width. -->
+<footer id="contact" class="ge-dark ge-footer" style="position: relative; overflow: hidden; padding: 96px clamp(16px, 5vw, 64px) clamp(110px, 16vw, 280px); background: #14161A; color: #FFFFFF">
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 48px 64px">
+<div data-draft-text="">
+<p style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9AEB8; margin: 0 0 16px; font-weight: 500">Contact</p>
+<p style="margin: 0 0 12px; font-size: 16px; line-height: 1.6">1618 Browns LN Access Rd<br>Jonesboro, AR 72401</p>
+<a href="tel:+18709356411" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">870-935-6411</a>
+<a href="#contact" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">Contact us</a>
+</div>
+<nav aria-label="Services" data-draft-text="">
+<p style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9AEB8; margin: 0 0 16px; font-weight: 500">Services</p>
+<a href="#automation" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">Automation and Controls</a>
+<a href="#networking" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">Networking and Video</a>
+<a href="#maintenance" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">Maintenance Staffing</a>
+</nav>
+<nav aria-label="Company" data-draft-text="">
+<p style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9AEB8; margin: 0 0 16px; font-weight: 500">Company</p>
+<a href="#about" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">About Gateway Engineering</a>
+<a href="https://www.gatewaysightsound.com/" target="_blank" rel="noopener" style="display: block; padding: 6px 0; font-size: 16px; line-height: 1.5">Gateway Sight &amp; Sound</a>
+</nav>
+</div>
+<!-- Sister companies, shown with their own logos. Both logos are light-on-dark (Sight & Sound's has white text, Gateway Apps' is orange), which is why they sit on the footer rather than in a white section. -->
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 64px auto 0; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.14)">
+<p style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A9AEB8; margin: 0 0 24px; font-weight: 500">Divisions</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 72px">
+<a href="https://www.gatewaysightsound.com/" target="_blank" rel="noopener" data-draft-box="" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<img src="assets/img/logo-gateway-sight-sound.png" alt="" style="height: 56px; width: auto; display: block">
+<span style="font-size: 15px; color: #FFFFFF">Gateway Sight &amp; Sound</span>
+</a>
+<a href="https://gatewayapps.com/" target="_blank" rel="noopener" data-draft-box="" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none">
+<span style="height: 56px; display: flex; align-items: center"><img src="assets/img/logo-gateway-apps.png" alt="" style="height: 30px; width: auto; display: block"></span>
+<span style="font-size: 15px; color: #FFFFFF">Gateway Apps</span>
+</a>
+</div>
+</div>
+<p style="position: relative; z-index: 1; max-width: 1200px; margin: 48px auto 0; font-size: 14px; color: #A9AEB8">© 2026 Gateway Engineering, Inc.</p>
+<!-- bottom: -0.126em is IBM Plex Sans' space below the baseline at line-height 1, so the letters' baseline lands exactly on the footer's bottom edge. Change the font or line-height and this number has to be re-measured. -->
+<div class="ge-wordmark" aria-hidden="true" style="position: absolute; right: -0.08em; bottom: -0.126em; z-index: 0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-weight: 600; font-size: clamp(72px, 19vw, 360px); line-height: 1; letter-spacing: -0.04em; color: #FFFFFF; opacity: 0.5; white-space: nowrap; pointer-events: none; user-select: none">GATEWAY</div>
+</footer>
+</div>
+<script>
+// Stand-in for the design canvas's component base class: the page's logic only uses props, state and setState.
+class DCLogic {
+  constructor() { this.props = { railSide: 'Left' }; this.state = {}; }
+  setState(patch) { Object.assign(this.state, patch); this.renderMenu(); }
+  renderMenu() { const m = document.querySelector('[data-menu]'); if (m) m.hidden = !this.state.menu; }
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    if (!this.hooks) {
+      this.el = {};
+      // Refs are created once: React re-calls a callback ref whenever the function changes, which would churn the
+      // nodes the scroll animation writes to.
+      const keep = (k) => (node) => { if (node) this.el[k] = node; };
+      this.hooks = {};
+      for (const k of ['wrap', 'nav', 'hero', 'heroMedia', 'heroShade', 'heroTitle', 'heroSub', 'cue', 'auto', 'autoFill', 'autoDot', 'netIntro', 'net', 'netStage', 'netRow',
+        'maint', 'pipes', 'about', 'aboutIntro', 'aboutStage', 'aboutPlane', 'aboutGrid', 'aboutTitle', 'conduit', 'photo', 'photoImg', 'cta', 'ctaCopy']) this.hooks[k + 'Ref'] = keep(k);
+      this.hooks.openMenu = () => this.setState({ menu: true });
+      this.hooks.closeMenu = () => this.setState({ menu: false });
+    }
+    return { ...this.hooks, menuOpen: !!(this.state && this.state.menu) };
+  }
+
+  componentDidMount() {
+    this.startVideos();
+    this.fitRail();
+    this.layout();
+    this.onScroll = () => { if (!this.ticking) { this.ticking = true; requestAnimationFrame(() => { this.ticking = false; this.update(); }); } };
+    this.onResize = () => { this.layout(); this.fitRail(); this.drawPipes(); this.drawConduit(); this.alignPhoto(); this.measureTitle(); this.update(); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onResize);
+    if ('ResizeObserver' in window) {
+      this.ro = new ResizeObserver(() => { this.drawPipes(); this.drawConduit(); this.alignPhoto(); });
+      [this.el.maint, this.el.about, this.el.photo].forEach((n) => n && this.ro.observe(n));
+    } else { this.drawPipes(); this.drawConduit(); this.alignPhoto(); }
+    this.setupReveals();
+    this.drafts = this.el.about ? Array.from(this.el.about.querySelectorAll('.ap-draft')) : [];
+    this.setupCtaDraft();
+    this.setupIntro();
+    // The card row moves with vertical scroll, so a sideways swipe on a trackpad (or Shift + mouse wheel) would
+    // otherwise do nothing over it. While the row is pinned, sideways wheel movement is turned into the equivalent
+    // page scroll, which slides the row the same way. That scroll is clamped to the pinned stretch: running past it
+    // would move the page off the row, after which sideways input no longer reaches it. Vertical scrolling is never
+    // intercepted.
+    this.onNetWheel = (e) => {
+      if (!this.motion || !this.el.net) return;
+      const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
+      if (!dx) return;
+      const r = this.el.net.getBoundingClientRect(), vh = window.innerHeight;
+      if (r.top > 2 || r.bottom < vh - 2) return;
+      e.preventDefault();
+      const y = window.scrollY, start = y + r.top, end = start + r.height - vh;
+      const step = dx * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? vh : 1);
+      const to = Math.min(end, Math.max(start, y + step));
+      if (Math.abs(to - y) >= 0.5) window.scrollTo(0, to);
+    };
+    if (this.el.netStage) this.el.netStage.addEventListener('wheel', this.onNetWheel, { passive: false });
+    this.measureTitle();
+    // The title overlay is measured against the web font; if it arrives after mount, measure again.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { this.measureTitle(); this.update(); });
+    this.update();
+  }
+
+  componentDidUpdate(prevProps) {
+    // The rail drawings are written straight into their SVGs, so a change of side has to redraw them by hand.
+    if ((prevProps || {}).railSide !== this.props.railSide) { this.fitRail(); this.drawPipes(); this.drawConduit(); }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    if (this.ro) this.ro.disconnect();
+    if (this.io) this.io.disconnect();
+    if (this.ctaIo) this.ctaIo.disconnect();
+    cancelAnimationFrame(this.ctaRaf);
+    cancelAnimationFrame(this.introRaf);
+    if (this.logoLink) this.logoLink.removeEventListener('click', this.onLogo);
+    if (this.el.netStage) this.el.netStage.removeEventListener('wheel', this.onNetWheel);
+  }
+
+  // Browsers only autoplay muted video, and React sets the muted property rather than the attribute, so both loops
+  // are muted and started here. The closing one runs slower so the bookend feels calmer.
+  startVideos() {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    (this.el.wrap ? this.el.wrap.querySelectorAll('.ap-video') : []).forEach((v) => {
+      v.muted = true; v.loop = true; v.playsInline = true;
+      if (v.classList.contains('ap-cta-video')) v.playbackRate = 0.7;
+      if (reduced) v.pause(); else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    });
+  }
+
+  // Scroll scenes run only where scrolling makes sense: not on the design canvas (the artboard is one window
+  // thousands of pixels tall, so nothing scrolls), not for visitors who ask for reduced motion, and not on phones,
+  // where pinned sideways rows are awkward to swipe past. Those get the static layout, with reveals only.
+  layout() {
+    const wrap = this.el.wrap;
+    if (!wrap) return;
+    const h = window.innerHeight, w = window.innerWidth;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.canvas = false;
+    this.motion = !this.canvas && !reduced && w >= 760;
+    wrap.classList.toggle('ap-static', !this.motion);
+    wrap.style.setProperty('--vh', (this.canvas ? 9 : h / 100) + 'px');
+    // The networking scene is as tall as one screen, plus however far the card row has to slide sideways, plus a hold
+    // of 40% of a screen at each end where the row sits still. Without the holds the row moves the instant it pins, so
+    // the first card slides away before it can be read, and the last one leaves as soon as it arrives.
+    // scrollWidth leaves out the row's right padding, so it's added back to keep the last card off the window edge.
+    if (this.el.net && this.el.netRow && this.el.netStage) {
+      if (this.motion) {
+        const padR = parseFloat(getComputedStyle(this.el.netRow).paddingRight) || 0;
+        const over = Math.max(0, this.el.netRow.scrollWidth + padR - this.el.netStage.clientWidth);
+        this.netOver = over;
+        this.netHold = Math.round(h * 0.4);
+        this.el.net.style.height = (h + 2 * this.netHold + over) + 'px';
+      } else { this.netOver = 0; this.el.net.style.height = ''; this.el.netRow.style.transform = ''; }
+    }
+  }
+
+  setupReveals() {
+    const items = this.el.wrap ? this.el.wrap.querySelectorAll('.ap-reveal') : [];
+    if (!('IntersectionObserver' in window)) { items.forEach((n) => n.classList.add('is-in')); return; }
+    this.io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); this.io.unobserve(e.target); }
+    }, { threshold: 0.15 });
+    items.forEach((n) => this.io.observe(n));
+  }
+
+  // Lines the drafted SVG copy of the About title up with the real heading text (which is transparent while the scene
+  // runs) and draws the two dimension lines around it: its width above, its cap height to the left. Measured from a
+  // Range on the heading's text node, so it follows the font, size and letter spacing the page actually rendered.
+  measureTitle() {
+    const h2 = this.el.aboutTitle;
+    if (!h2 || !this.motion) return;
+    const svg = h2.querySelector('.ap-ttl-svg'), txt = svg.querySelector('.ap-ttl-text');
+    // Measured flat: the camera move tilts and scales the plane, which would distort every rectangle read here.
+    const plane = this.el.aboutPlane, keepT = plane ? plane.style.transform : '';
+    if (plane) plane.style.transform = 'none';
+    const range = document.createRange(); range.selectNodeContents(h2.firstChild);
+    const tr = range.getBoundingClientRect(), hr = h2.getBoundingClientRect();
+    if (plane) plane.style.transform = keepT;
+    const fs = parseFloat(getComputedStyle(h2).fontSize);
+    // Place the copy, then nudge it by the gap between its glyph box and the heading's text box so the two coincide
+    // and the hand-back to the real text at the end doesn't shift.
+    txt.setAttribute('x', '0'); txt.setAttribute('y', String(tr.top - hr.top + fs));
+    const g0 = txt.getBBox();
+    txt.setAttribute('x', String(tr.left - hr.left - g0.x));
+    txt.setAttribute('y', String(tr.top - hr.top + fs + (tr.top - hr.top) - g0.y));
+    const bb = txt.getBBox(), base = Number(txt.getAttribute('y')), cap = base - fs * 0.698;
+    const x0 = bb.x, x1 = bb.x + Math.min(bb.width, tr.width), yT = bb.y, d = 30;
+    const tick = (x, y) => 'M' + (x - 4) + ' ' + (y + 4) + 'L' + (x + 4) + ' ' + (y - 4);
+    const wPath = 'M' + x0 + ' ' + (yT - 6) + 'V' + (yT - d - 8) + 'M' + x1 + ' ' + (yT - 6) + 'V' + (yT - d - 8) +
+      'M' + x0 + ' ' + (yT - d) + 'H' + x1 + tick(x0, yT - d) + tick(x1, yT - d);
+    const hx = -d;
+    const hPath = 'M-6 ' + cap + 'H' + (hx - 8) + 'M-6 ' + base + 'H' + (hx - 8) + 'M' + hx + ' ' + cap + 'V' + base + tick(hx, cap) + tick(hx, base);
+    svg.querySelector('[data-dim="w"]').setAttribute('d', wPath);
+    svg.querySelector('[data-dim="h"]').setAttribute('d', hPath);
+    const lw = svg.querySelector('[data-label="w"]'), lh = svg.querySelector('[data-label="h"]');
+    lw.setAttribute('x', String((x0 + x1) / 2)); lw.setAttribute('y', String(yT - d - 10));
+    lh.setAttribute('transform', 'translate(' + (hx - 10) + ' ' + ((cap + base) / 2) + ') rotate(-90)');
+    // Long enough to cover the outline of the most intricate glyph, so every letter finishes drafting together.
+    this.ttl = { w: Math.round(x1 - x0), h: Math.round(base - cap), dash: Math.round(fs * 9), txt, lw, lh, svg, h2,
+      dims: Array.from(svg.querySelectorAll('.ap-dim')), dimG: svg.querySelector('.ap-dims'),
+      // The heading box spans the whole column but the words only part of it, so the centre is the words' centre.
+      cx: h2.offsetLeft + (x0 + x1) / 2, cy: h2.offsetTop + h2.offsetHeight / 2 };
+    // offsetLeft/Top are relative to the plane only because nothing between it and the heading is positioned except
+    // the padded wrapper, whose offset is added here.
+    const pad = h2.offsetParent;
+    if (pad && pad !== this.el.aboutPlane) { this.ttl.cx += pad.offsetLeft; this.ttl.cy += pad.offsetTop; }
+    txt.style.strokeDasharray = this.ttl.dash + ' ' + this.ttl.dash;
+  }
+
+  // How far through a pinned scene the visitor has scrolled: 0 as its top reaches the top of the window, 1 as its
+  // bottom reaches the bottom.
+  through(node) {
+    if (!node) return 0;
+    const r = node.getBoundingClientRect(), span = r.height - window.innerHeight;
+    return span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : (r.top < 0 ? 1 : 0);
+  }
+
+  update() {
+    const el = this.el, m = this.motion;
+    if (el.nav) el.nav.classList.toggle('is-solid', window.scrollY > 8);
+    const clamp = (v) => Math.min(1, Math.max(0, v));
+    const ease = (p) => 1 - Math.pow(1 - p, 3);
+
+    // Hero: the headline lifts away, the video shrinks into a rounded card, then the subline rises in.
+    const hp = m ? this.through(el.hero) : 0;
+    if (el.heroMedia) {
+      const s = ease(clamp(hp / 0.7));
+      el.heroMedia.style.transform = 'scale(' + (1 - 0.14 * s) + ')';
+      el.heroMedia.style.borderRadius = (32 * s) + 'px';
+      el.heroShade.style.opacity = String(1 + 0.4 * s);
+      const t = clamp(hp / 0.4);
+      el.heroTitle.style.opacity = String(1 - t);
+      el.heroTitle.style.transform = 'translateY(' + (-70 * t) + 'px) scale(' + (1 - 0.08 * t) + ')';
+      if (m) {
+        const u = ease(clamp((hp - 0.42) / 0.38));
+        el.heroSub.style.opacity = String(u);
+        el.heroSub.style.transform = 'translateY(' + (36 * (1 - u)) + 'px)';
+        el.cue.style.opacity = String(1 - clamp(hp / 0.15));
+      } else { el.heroSub.style.opacity = ''; el.heroSub.style.transform = ''; }
+    }
+
+    // Automation: the scene is split into six equal stretches, one per service. The pale fill on the line grows
+    // continuously through each stretch, so how far is left is always visible, while the dot and the black text
+    // only move on to the next service once its stretch begins.
+    if (el.auto) {
+      const steps = el.auto.querySelectorAll('.ap-step'), shots = el.auto.querySelectorAll('.ap-shot'), n = steps.length;
+      const x = m ? this.through(el.auto) * n : 0;
+      const cur = Math.min(n - 1, Math.floor(x)), f = Math.min(1, x - cur);
+      if (cur !== this.autoIdx) { this.autoIdx = cur; steps.forEach((s, i) => s.classList.toggle('is-on', i === cur)); }
+      // The photo changes at the same moment as the black title and the dot, with a short timed crossfade, so it
+      // never shows the next service while the previous one is still the one being read. Within its stretch the
+      // current photo settles from 106% to 100%; a finished photo keeps 100% so it doesn't jump while fading out.
+      shots.forEach((img, i) => {
+        if (!m) { img.style.opacity = ''; img.style.transform = ''; return; }
+        img.style.opacity = i === cur ? '1' : '0';
+        img.style.transform = 'scale(' + (i < cur ? 1 : i > cur ? 1.06 : 1.06 - 0.06 * clamp(f / 0.75)) + ')';
+      });
+      if (el.autoFill && m) {
+        // Measured from title to title, so the fill's tip lands on the next title at the very moment the dot jumps
+        // there; the last stretch runs on to the end of the list.
+        const mid = (i) => { const h = steps[i].querySelector('h3'); return h.offsetTop + h.offsetHeight / 2; };
+        const from = mid(cur), to = cur < n - 1 ? mid(cur + 1) : steps[n - 1].offsetTop + steps[n - 1].offsetHeight;
+        el.autoFill.style.height = (from + (to - from) * f) + 'px';
+        el.autoDot.style.transform = 'translateY(' + from + 'px)';
+      }
+    }
+
+    // Networking intro: "Networking" fires as the scene settles into view, "and Video." a third of the way through,
+    // and the subline past 60%. Classes are only touched when the step changes, so each effect plays once per crossing.
+    if (el.netIntro) {
+      const r = el.netIntro.getBoundingClientRect(), ip = this.through(el.netIntro);
+      const st = !m ? 3 : ip > 0.6 ? 3 : ip > 0.3 ? 2 : r.top < window.innerHeight * 0.35 ? 1 : 0;
+      if (st !== this.introStep) {
+        this.introStep = st;
+        el.netIntro.classList.toggle('is-net', st >= 1);
+        el.netIntro.classList.toggle('is-vid', st >= 2);
+        el.netIntro.classList.toggle('is-sub', st >= 3);
+      }
+    }
+
+    // Networking: after the opening hold the card row slides left one pixel per pixel of scroll, then rests for the
+    // closing hold.
+    if (el.netRow && m) {
+      const slid = this.netOver ? clamp((-el.net.getBoundingClientRect().top - this.netHold) / this.netOver) : 0;
+      el.netRow.style.transform = 'translateX(' + (-this.netOver * slid) + 'px)';
+    }
+
+    // About intro, over the pinned scene: 0-22% the dimension lines draw and count up, 18-58% the letter outlines are
+    // drafted, 55-75% they fill, 72-87% the dimensions fade, and 85-100% the stand-in grid fades into the section's
+    // own. Throughout, the sheet eases from tilted and zoomed (k = 1) to flat (k = 0).
+    if (el.aboutPlane && this.ttl && (!m || (ar0 => ar0.bottom > 0 && ar0.top < window.innerHeight)(el.aboutIntro.getBoundingClientRect()))) {
+      const T = this.ttl, p = m ? this.through(el.aboutIntro) : 1;
+      const smooth = (v) => v * v * (3 - 2 * v);
+      const k = 1 - smooth(clamp((p - 0.04) / 0.8));
+      const mm = clamp(p / 0.22), dd = clamp((p - 0.18) / 0.4), ff = clamp((p - 0.55) / 0.2), out = clamp((p - 0.72) / 0.15), bg = clamp((p - 0.85) / 0.15);
+      // The camera move centres the title in the window while zoomed, then lets it settle back to its place in the column.
+      const H = el.aboutStage.clientHeight, dx = el.aboutStage.clientWidth / 2 - T.cx, dy = H * 0.45 - T.cy;
+      el.aboutPlane.style.transformOrigin = T.cx + 'px ' + T.cy + 'px';
+      el.aboutPlane.style.transform = k > 0.0005
+        ? 'translate3d(' + (k * dx).toFixed(1) + 'px,' + (k * dy).toFixed(1) + 'px,0) rotateX(' + (k * 34).toFixed(2) + 'deg) rotateZ(' + (-k * 6).toFixed(2) + 'deg) scale(' + (1 + k * 0.28).toFixed(3) + ')'
+        : 'none';
+      T.dims.forEach((d) => { d.style.strokeDasharray = '1 1'; d.style.strokeDashoffset = String(1 - mm); });
+      T.dimG.style.opacity = String(Math.min(1, mm * 6) * (1 - out));
+      T.lw.textContent = Math.round(T.w * mm).toLocaleString('en-US');
+      T.lh.textContent = String(Math.round(T.h * mm));
+      T.txt.style.strokeDashoffset = String(T.dash * (1 - dd));
+      T.txt.style.fillOpacity = String(ff);
+      T.txt.style.strokeOpacity = String(1 - 0.85 * ff);
+      // While drafting, the real heading is hidden behind its SVG copy; once the outline has filled and the dimensions
+      // have gone (87%), the real text takes over again.
+      const drafting = m && p < 0.87;
+      T.h2.style.color = drafting ? 'transparent' : '';
+      T.svg.style.visibility = drafting ? 'visible' : '';
+      el.aboutStage.style.setProperty('--bg', String(1 - bg));
+      el.aboutGrid.style.opacity = String(1 - bg);
+      // Keep the stand-in grid's lines on top of the section's lines while they crossfade, so the hand-off is seamless.
+      if (bg > 0 && this.gridO) {
+        const s = el.about.getBoundingClientRect(), st = el.aboutStage.getBoundingClientRect();
+        el.aboutGrid.style.backgroundPosition = (this.gridO[0] - el.aboutGrid.offsetLeft) + 'px ' + (this.gridO[1] - (st.top - s.top) - el.aboutGrid.offsetTop) + 'px';
+      }
+    }
+
+    // About blocks: each drafts in between entering the bottom of the window and reaching about half way up.
+    // Skipped entirely while the section is off screen, so the rest of the page pays nothing for it.
+    const ar = el.about ? el.about.getBoundingClientRect() : null;
+    if (this.drafts && ar && ar.bottom > 0 && ar.top < window.innerHeight) {
+      const vh = window.innerHeight;
+      for (const b of this.drafts) {
+        const r = b.getBoundingClientRect();
+        const q = m ? clamp((vh * 0.95 - r.top) / (vh * 0.45)) : 1;
+        if (b.apQ === q) continue;
+        this.setDraft(b, q);
+      }
+    }
+
+    // About: the building photo zooms out from 115% to 100% as it crosses the window.
+    if (el.photoImg && el.photo) {
+      const r = el.photo.getBoundingClientRect(), vh = window.innerHeight;
+      const p = m ? clamp((vh - r.top) / (vh + r.height)) : 1;
+      el.photoImg.style.transform = 'scale(' + (1.15 - 0.15 * ease(p)) + ')';
+    }
+
+  }
+
+  // Page-load intro: the nav logo draws itself in (its drawing carries its own timings in data-t0/t1, in seconds of
+  // the original 4-second hero animation, played here a third faster), and the hero title is dimensioned, outlined and
+  // filled. Clicking the logo jumps back to the top and plays both again, standing in for a page refresh.
+  setupIntro() {
+    const nav = this.el.nav;
+    const svg = nav && nav.querySelector('.ap-logo');
+    if (svg) {
+      this.logo = {
+        parts: Array.from(svg.querySelectorAll('.gw-draw, .gw-brush')).map((el) => ({
+          el, len: parseFloat(el.style.strokeDasharray) || el.getTotalLength(), t0: +el.dataset.t0, t1: +el.dataset.t1 })),
+        wipe: svg.querySelector('#apgwWipe'), soft: svg.querySelector('#apgwWipeSoft'), frame: svg.querySelector('#apgwFrameFinal'),
+      };
+    }
+    this.logoLink = nav && nav.querySelector('.ap-nav-logo');
+    if (this.logoLink) {
+      this.onLogo = (e) => { e.preventDefault(); window.scrollTo(0, 0); this.playIntro(); };
+      this.logoLink.addEventListener('click', this.onLogo);
+    }
+    this.playIntro();
+  }
+
+  renderLogo(T) {
+    const L = this.logo, c = (v) => Math.min(1, Math.max(0, v));
+    if (!L) return;
+    L.parts.forEach((p) => { p.el.style.strokeDashoffset = String(p.len * (1 - c((T - p.t0) / (p.t1 - p.t0)))); });
+    const w = 466 * c((T - 2.9) / 0.7);
+    if (L.wipe) L.wipe.setAttribute('width', String(w));
+    if (L.soft) L.soft.setAttribute('x', String(100 + w));
+    if (L.frame) L.frame.setAttribute('opacity', String(c((T - 1.6) / 0.8)));
+  }
+
+  // Splits the hero title into its rendered lines (it wraps), and lays an SVG copy of each line exactly over the real
+  // text, plus a width dimension over the block and a cap-height dimension beside the first line. Measured with the
+  // scroll transform cleared, since that scales the title once the page has been scrolled.
+  measureHero() {
+    const h = this.el.heroTitle, span = h && h.firstElementChild, node = span && span.firstChild;
+    if (!node || node.nodeType !== 3) return null;
+    const keepT = h.style.transform; h.style.transform = 'none';
+    const hr = h.getBoundingClientRect(), fs = parseFloat(getComputedStyle(h).fontSize), text = node.textContent;
+    const range = document.createRange(), lines = [];
+    for (const m of text.matchAll(/\S+/g)) {
+      range.setStart(node, m.index); range.setEnd(node, m.index + m[0].length);
+      const r = range.getBoundingClientRect(), last = lines[lines.length - 1];
+      if (last && Math.abs(r.top - last.top) < fs * 0.3) { last.end = m.index + m[0].length; last.right = r.right; }
+      else lines.push({ start: m.index, end: m.index + m[0].length, left: r.left, right: r.right, top: r.top });
+    }
+    h.style.transform = keepT;
+    let svg = h.querySelector('.ap-hd-svg');
+    if (svg) svg.remove();
+    const NS = 'http://www.w3.org/2000/svg', mk = (tag, cls) => { const n = document.createElementNS(NS, tag); if (cls) n.setAttribute('class', cls); return n; };
+    svg = mk('svg', 'ap-hd-svg'); svg.setAttribute('aria-hidden', 'true'); h.appendChild(svg);
+    const texts = lines.map((ln) => {
+      const t = mk('text', 'ap-hd-text'); t.textContent = text.slice(ln.start, ln.end);
+      t.setAttribute('x', String(ln.left - hr.left)); t.setAttribute('y', String(ln.top - hr.top + fs)); svg.appendChild(t);
+      // Nudge by the difference between the SVG glyph box and the HTML text box, so the copy sits exactly on the text.
+      const b = t.getBBox();
+      t.setAttribute('x', String(2 * (ln.left - hr.left) - b.x)); t.setAttribute('y', String(ln.top - hr.top + fs + (ln.top - hr.top) - b.y));
+      return t;
+    });
+    const base = Number(texts[0].getAttribute('y')), cap = base - fs * 0.698, d = 26;
+    const x0 = Math.min(...lines.map((l) => l.left)) - hr.left, x1 = Math.max(...lines.map((l) => l.right)) - hr.left, lx = lines[0].left - hr.left;
+    const tick = (x, y) => 'M' + (x - 4) + ' ' + (y + 4) + 'L' + (x + 4) + ' ' + (y - 4);
+    const g = mk('g'), wp = mk('path', 'ap-dim'), hp = mk('path', 'ap-dim'), lw = mk('text', 'ap-dim-label'), lh = mk('text', 'ap-dim-label');
+    wp.setAttribute('d', 'M' + x0 + ' ' + (cap - 6) + 'V' + (cap - d - 8) + 'M' + x1 + ' ' + (cap - 6) + 'V' + (cap - d - 8) + 'M' + x0 + ' ' + (cap - d) + 'H' + x1 + tick(x0, cap - d) + tick(x1, cap - d));
+    hp.setAttribute('d', 'M' + (lx - 6) + ' ' + cap + 'H' + (lx - d - 8) + 'M' + (lx - 6) + ' ' + base + 'H' + (lx - d - 8) + 'M' + (lx - d) + ' ' + cap + 'V' + base + tick(lx - d, cap) + tick(lx - d, base));
+    [wp, hp].forEach((pth) => { pth.setAttribute('pathLength', '1'); pth.style.strokeDasharray = '1 1'; });
+    lw.setAttribute('text-anchor', 'middle'); lw.setAttribute('x', String((x0 + x1) / 2)); lw.setAttribute('y', String(cap - d - 10));
+    lh.setAttribute('text-anchor', 'middle'); lh.setAttribute('transform', 'translate(' + (lx - d - 10) + ' ' + ((cap + base) / 2) + ') rotate(-90)');
+    g.append(wp, hp, lw, lh); svg.insertBefore(g, svg.firstChild);
+    const dash = Math.round(fs * 9);
+    texts.forEach((t) => { t.style.strokeDasharray = dash + ' ' + dash; });
+    return { svg, texts, g, dims: [wp, hp], lw, lh, w: Math.round(x1 - x0), ch: Math.round(base - cap), dash };
+  }
+
+  // t in seconds since the intro started: dimensions 0.3-0.9s, outlines 0.6-1.8s, fill 1.6-2.2s, dimensions fade
+  // 2.0-2.5s. Returns true once finished, when the SVG copy is removed and the real text shown again.
+  renderHero(t) {
+    const H = this.hero, c = (v) => Math.min(1, Math.max(0, v));
+    if (!H) return true;
+    const mm = c((t - 0.3) / 0.6), dd = c((t - 0.6) / 1.2), ff = c((t - 1.6) / 0.6), out = c((t - 2.0) / 0.5);
+    H.dims.forEach((pth) => { pth.style.strokeDashoffset = String(1 - mm); });
+    H.g.style.opacity = String(Math.min(1, mm * 6) * (1 - out));
+    H.lw.textContent = Math.round(H.w * mm).toLocaleString('en-US');
+    H.lh.textContent = String(Math.round(H.ch * mm));
+    H.texts.forEach((tx) => { tx.style.strokeDashoffset = String(H.dash * (1 - dd)); tx.style.fillOpacity = String(ff); tx.style.strokeOpacity = String(1 - 0.85 * ff); });
+    if (t >= 2.5) { this.el.heroTitle.classList.remove('is-drafting'); H.svg.style.display = 'none'; return true; }
+    return false;
+  }
+
+  playIntro() {
+    cancelAnimationFrame(this.introRaf);
+    const h = this.el.heroTitle, token = (this.introToken = (this.introToken || 0) + 1);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.renderLogo(99); if (h) h.classList.remove('is-drafting'); return;
+    }
+    this.renderLogo(0);
+    if (h) h.classList.add('is-drafting');
+    const go = () => {
+      if (token !== this.introToken) return;
+      this.hero = h ? this.measureHero() : null;
+      if (!this.hero && h) h.classList.remove('is-drafting');
+      const t0 = performance.now();
+      const tick = (now) => {
+        const t = (now - t0) / 1000;
+        this.renderLogo(t * 1.35);
+        const heroDone = this.renderHero(t);
+        if (!heroDone || t * 1.35 < 4) this.introRaf = requestAnimationFrame(tick);
+      };
+      this.introRaf = requestAnimationFrame(tick);
+    };
+    // The title copy has to be measured in the web font, so wait for it (but never more than a second).
+    let started = false;
+    const once = () => { if (!started) { started = true; go(); } };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(once);
+    setTimeout(once, 1000);
+  }
+
+  // One drafting block at progress q (0 to 1): its width is measured over the first 35%, the dashed outline drafts
+  // from 20% to 60%, and the content fills in over the last 45% while the marks fade.
+  setDraft(b, q) {
+    const c = (v) => Math.min(1, Math.max(0, v));
+    b.apQ = q;
+    b.style.setProperty('--m', String(c(q / 0.35)));
+    b.style.setProperty('--o', String(c((q - 0.2) / 0.4)));
+    b.style.setProperty('--f', String(c((q - 0.55) / 0.45)));
+  }
+
+  // Closing call to action: the same drafting as the About blocks, but played on a clock once most of the section is
+  // in view, since the section is a single screen and scroll alone would finish it before anyone is looking. Heading
+  // first, then each button just after; it resets when the section leaves the window so it plays again next time.
+  setupCtaDraft() {
+    const sec = this.el.cta;
+    if (!sec || !this.motion || !('IntersectionObserver' in window)) return;
+    const items = Array.from(sec.querySelectorAll('.ap-draft')), starts = [0, 0.45, 0.6], dur = 1.1;
+    items.forEach((b) => this.setDraft(b, 0));
+    const play = () => {
+      const t0 = performance.now();
+      const tick = (now) => {
+        const t = (now - t0) / 1000;
+        items.forEach((b, i) => this.setDraft(b, Math.min(1, Math.max(0, (t - (starts[i] || 0)) / dur))));
+        if (t < dur + starts[starts.length - 1]) this.ctaRaf = requestAnimationFrame(tick);
+      };
+      this.ctaRaf = requestAnimationFrame(tick);
+    };
+    this.ctaIo = new IntersectionObserver(([e]) => {
+      if (e.intersectionRatio >= 0.55 && !this.ctaPlayed) { this.ctaPlayed = true; play(); }
+      else if (!e.isIntersecting && this.ctaPlayed) { cancelAnimationFrame(this.ctaRaf); this.ctaPlayed = false; items.forEach((b) => this.setDraft(b, 0)); }
+    }, { threshold: [0, 0.55] });
+    this.ctaIo.observe(sec);
+  }
+
+  // How far the rail reaches in from its edge at this width (the innermost pipe's gauge is the furthest point, then
+  // the junction box), plus a 24px gap, published as --rail-clear for the padding rule in the styles. The side is
+  // set as a class on the page wrapper so that rule knows which padding to widen.
+  fitRail() {
+    const wrap = this.el.wrap;
+    if (!wrap) return;
+    const W = wrap.clientWidth, gutter = Math.max(64, (W - 1200) / 2), k = Math.min(1, (gutter - 10) / 100);
+    const reach = Math.max(88 * k + 34, 104 * k);
+    wrap.style.setProperty('--rail-clear', Math.ceil(reach + 24) + 'px');
+    const left = this.props.railSide === 'Left';
+    wrap.classList.toggle('ap-rail-left', left);
+    wrap.classList.toggle('ap-rail-right', !left);
+  }
+
+  drawPipes() {
+    const sec = this.el.maint, svg = this.el.pipes;
+    const W = sec.clientWidth, H = sec.clientHeight;
+    if (!W || !H) { svg.innerHTML = ''; return; }
+    // The three pipes sit at fixed distances from the right edge, scaled down when the margin is narrow so the
+    // innermost never reaches the content. The About conduit uses the same strip; change both together.
+    const gutter = Math.max(64, (W - 1200) / 2);
+    const k = Math.min(1, (gutter - 10) / 100);
+    const pipes = [{ d: 40, w: 16 }, { d: 66, w: 11 }, { d: 88, w: 8 }].map((p) => ({ x: W - p.d * k, w: p.w * Math.max(k, 0.7) }));
+    let out = '';
+    // A dark casing, a mid-steel body and a thin highlight down the lit side read as a round pipe.
+    for (const p of pipes) {
+      const d = 'M' + p.x + ' -10L' + p.x + ' ' + (H + 10);
+      out += '<path d="' + d + '" fill="none" stroke="#3A3F47" stroke-width="' + (p.w + 2) + '"/>'
+        + '<path d="' + d + '" fill="none" stroke="#9AA0A9" stroke-width="' + p.w + '"/>'
+        + '<path d="' + d + '" fill="none" stroke="#E3E6EA" stroke-width="' + (p.w * 0.28) + '" transform="translate(' + (-p.w * 0.18) + ' 0)"/>';
+    }
+    const flange = (y, p) => '<rect x="' + (p.x - p.w / 2 - 4) + '" y="' + (y - 3) + '" width="' + (p.w + 8) + '" height="6" rx="1" fill="#6B7280"/>';
+    pipes.forEach((p, i) => { out += flange(H * (0.3 + i * 0.06), p) + flange(H * (0.72 - i * 0.05), p); });
+    // Gate valve with a red handwheel on the outer pipe. The wheel faces the viewer, centered on the valve, so it
+    // stays within the pipe's own width; drawn edge-on beside the pipe, it ran off the page edge on narrower screens.
+    const p0 = pipes[0], vy = H * 0.5, wr = 11;
+    out += '<rect x="' + (p0.x - p0.w / 2 - 5) + '" y="' + (vy - 12) + '" width="' + (p0.w + 10) + '" height="24" rx="2" fill="#5A6270"/>'
+      + '<circle cx="' + p0.x + '" cy="' + vy + '" r="' + wr + '" fill="none" stroke="#D0544F" stroke-width="3"/>'
+      + '<path d="M' + (p0.x - wr) + ' ' + vy + 'H' + (p0.x + wr) + 'M' + p0.x + ' ' + (vy - wr) + 'V' + (vy + wr) + '" stroke="#D0544F" stroke-width="2"/>'
+      + '<circle cx="' + p0.x + '" cy="' + vy + '" r="3" fill="#3A3F47"/>';
+    // Pressure gauge off the inner pipe, facing the content side.
+    const p2 = pipes[2], gy = H * 0.4, gx = p2.x - p2.w / 2 - 17;
+    out += '<rect x="' + (p2.x - p2.w / 2 - 6) + '" y="' + (gy - 2) + '" width="6" height="4" fill="#5A6270"/>'
+      + '<circle cx="' + gx + '" cy="' + gy + '" r="11" fill="#FFFFFF" stroke="#3A3F47" stroke-width="2.5"/>'
+      + '<line x1="' + gx + '" y1="' + gy + '" x2="' + (gx + 5) + '" y2="' + (gy - 6) + '" stroke="#D0544F" stroke-width="1.6" stroke-linecap="round"/>'
+      + '<circle cx="' + gx + '" cy="' + gy + '" r="1.6" fill="#3A3F47"/>';
+    // The pipes fade in from the section above and out into the one below, like the cables in Networking and Video.
+    const F = 90;
+    svg.innerHTML = '<defs><linearGradient id="ge-pipe-fade" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="' + H + '">'
+      + '<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="' + (F / H) + '" stop-color="#fff"/>'
+      + '<stop offset="' + (1 - F / H) + '" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+      + '<mask id="ge-pipe-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="' + W + '" height="' + H + '"><rect width="' + W + '" height="' + H + '" fill="url(#ge-pipe-fade)"/></mask></defs>'
+      + '<g mask="url(#ge-pipe-mask)">' + this.railSide(out, W) + '</g>';
+  }
+
+  // Three conduits down the right edge, on the same centers as the pipes in Maintenance Staffing, with couplings and
+  // a junction box partway down. Drawn in light steel because this section is dark.
+  drawConduit() {
+    const sec = this.el.about, svg = this.el.conduit;
+    if (!svg) return;
+    const W = sec.clientWidth, H = sec.clientHeight;
+    if (!W || !H) { svg.innerHTML = ''; return; }
+    const gutter = Math.max(64, (W - 1200) / 2);
+    const k = Math.min(1, (gutter - 10) / 100);
+    const xs = [W - 88 * k, W - 64 * k, W - 40 * k], w = 7 * Math.max(k, 0.7);
+    let out = '';
+    for (const x of xs) {
+      out += '<rect x="' + (x - w / 2) + '" y="-10" width="' + w + '" height="' + (H + 20) + '" fill="#6B7280"/>'
+        + '<rect x="' + (x - w / 2 + 1) + '" y="-10" width="' + (w * 0.3) + '" height="' + (H + 20) + '" fill="#9AA0A9"/>';
+      for (let y = 140; y < H - 100; y += 260) out += '<rect x="' + (x - w / 2 - 2) + '" y="' + y + '" width="' + (w + 4) + '" height="12" rx="1.5" fill="#8A919C"/>';
+    }
+    // Junction box: all three conduits enter through glands on its top and leave through its bottom.
+    const bx = xs[0] - 16 * k, bw = xs[2] - xs[0] + 32 * k, by = H * 0.42, bh = 64;
+    for (const x of xs) {
+      out += '<rect x="' + (x - w / 2 - 2) + '" y="' + (by - 7) + '" width="' + (w + 4) + '" height="7" fill="#9AA0A9"/>'
+        + '<rect x="' + (x - w / 2 - 2) + '" y="' + (by + bh) + '" width="' + (w + 4) + '" height="7" fill="#9AA0A9"/>';
+    }
+    out += '<rect x="' + bx + '" y="' + by + '" width="' + bw + '" height="' + bh + '" rx="3" fill="#3A3F47" stroke="#8A919C" stroke-width="1.5"/>'
+      + '<rect x="' + (bx + 5) + '" y="' + (by + 5) + '" width="' + (bw - 10) + '" height="' + (bh - 10) + '" rx="2" fill="#4A505A"/>';
+    for (const [dx, dy] of [[9, 9], [bw - 9, 9], [9, bh - 9], [bw - 9, bh - 9]]) out += '<circle cx="' + (bx + dx) + '" cy="' + (by + dy) + '" r="1.8" fill="#9AA0A9"/>';
+    // Fades in from the section above and out into the one below, like the rest of the run.
+    const F = 90;
+    svg.innerHTML = '<defs><linearGradient id="ge-conduit-fade" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="' + H + '">'
+      + '<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="' + (F / H) + '" stop-color="#fff"/>'
+      + '<stop offset="' + (1 - F / H) + '" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+      + '<mask id="ge-conduit-mask" maskUnits="userSpaceOnUse" x="0" y="-10" width="' + W + '" height="' + (H + 20) + '"><rect y="-10" width="' + W + '" height="' + (H + 20) + '" fill="url(#ge-conduit-fade)"/></mask></defs>'
+      + '<g mask="url(#ge-conduit-mask)">' + this.railSide(out, W) + '</g>';
+  }
+
+  // Snap the building photo to the drafting grid: its width and height become whole 24px cells (keeping roughly the
+  // 21:9 shape), and the grid's origin moves to the photo's top-left corner. The grid lines are drawn at the start of
+  // each cell, so the top and left lines run under the photo's first row and column and the right and bottom lines
+  // fall just outside it.
+  alignPhoto() {
+    const sec = this.el.about, box = this.el.photo, img = this.el.photoImg;
+    if (!sec || !box || !img) return;
+    const CELL = 24, avail = box.clientWidth;
+    if (!avail) return;
+    const w = Math.floor(avail / CELL) * CELL, h = Math.max(CELL, Math.round(w * 9 / 21 / CELL) * CELL);
+    if (img.style.width !== w + 'px') { img.style.width = w + 'px'; img.style.height = h + 'px'; img.style.aspectRatio = 'auto'; }
+    const s = sec.getBoundingClientRect(), r = img.getBoundingClientRect();
+    // Unrounded, so the lines land on the photo's edges even when centering puts it on a half pixel.
+    const ox = r.left - s.left, oy = r.top - s.top;
+    sec.style.backgroundPosition = ox + 'px ' + oy + 'px';
+    this.gridO = [ox, oy];
+  }
+
+  // The side rail (pipes, conduit) is always drawn against the right edge; for the Left setting
+  // the finished drawing is mirrored across the section, which puts it in the same strip measured from the left edge.
+  railSide(out, W) {
+    return this.props.railSide === 'Left' ? '<g transform="translate(' + W + ' 0) scale(-1 1)">' + out + '</g>' : out;
+  }
+
+}
+
+(() => {
+  const page = new Component();
+  page.renderVals();
+  document.querySelectorAll('[data-ref]').forEach((node) => { page.el[node.dataset.ref] = node; });
+  // Menu links close the menu and still follow their anchor, so only the buttons' default is irrelevant here.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-action]');
+    if (a) page.setState({ menu: a.dataset.action === 'open-menu' });
+  });
+  page.componentDidMount();
+})();
+</script>
+</body>
+</html>
