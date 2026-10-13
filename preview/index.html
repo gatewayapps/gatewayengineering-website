@@ -41,9 +41,15 @@ a{color:#1A3CC8;text-decoration:none}a:hover{color:#1A3CC8;text-decoration:under
 .ap-nav-logo{display:block;justify-self:start}
 /* The wordmark is six times wider than it is tall, so it scales with the window: at full size it nearly fills the bar
    (58px of 68, 52px of 60 once solid), and narrower windows shrink it before it can push into the links. */
-/* The traced logo is transparent, and navy on the dark hero video all but vanishes, so it sits on a solid white
-   backing (invisible once the header itself turns white). */
-.ap-logo-bg{fill:#FFFFFF}
+/* Over the hero video the header is see-through, so the logo goes white with no backing (navy would vanish on the
+   dark footage); once the header turns solid white it returns to its own navy and grey. CSS fill on the groups
+   overrides the fill attributes in the artwork, and the per-path fill-opacity keeps the faint construction lines faint. */
+.ap-logo g{transition:fill .35s ease}
+.ap-nav:not(.is-solid) .ap-logo g{fill:#FFFFFF}
+/* The underline is one stroked path with inline colours, which only !important can override. */
+.ap-nav:not(.is-solid) .ap-logo path[style*="stroke"]{fill:#FFFFFF !important;stroke:#FFFFFF !important}
+.ap-logo-bg{fill:#FFFFFF;opacity:0;transition:opacity .35s ease}
+.ap-nav.is-solid .ap-logo-bg{opacity:1}
 .ap-logo{display:block;height:clamp(40px,4vw,58px);width:auto;transition:height .35s ease}
 .ap-nav.is-solid .ap-logo{height:clamp(40px,3.6vw,52px)}
 .ap-nav-links{display:flex;justify-self:center;gap:clamp(22px,2.5vw,36px)}
